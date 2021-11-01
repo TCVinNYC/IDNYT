@@ -2,13 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIImageName</key>
-		<string>NYITIcon</string>
-		<key>UIColorName</key>
-		<string>Background</string>
-	</dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.1022985219570-3tsib0a5r16c0g70ih9rjt6gveg8ja5q</string>
+			</array>
+		</dict>
+	</array>
 	<key>FirebaseScreenReportingEnabled</key>
 	<false/>
 	<key>UIApplicationSceneManifest</key>
@@ -29,6 +33,13 @@
 				</dict>
 			</array>
 		</dict>
+	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>Background</string>
+		<key>UIImageName</key>
+		<string>NYITIcon</string>
 	</dict>
 </dict>
 </plist>
