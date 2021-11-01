@@ -9,7 +9,9 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
-class AuthManager {
+class StoredInformation {
+    
+    let shared = StoredInformation.self
     
 
 
