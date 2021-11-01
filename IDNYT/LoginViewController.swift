@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
     }
     
     @IBAction func signInClick(_ sender: Any) {
@@ -26,7 +28,7 @@ class LoginViewController: UIViewController {
 
         // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
-        
+
         // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
 
@@ -44,7 +46,7 @@ class LoginViewController: UIViewController {
 
           let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                          accessToken: authentication.accessToken)
-            
+
             Auth.auth().signIn(with: credential) { result, error in
                 if(error != nil){
                     print("broke auth")
@@ -52,16 +54,17 @@ class LoginViewController: UIViewController {
                 }
                 print("user signed in")
                 print(user?.profile?.email)
-                
+
                 if((user?.profile?.email.hasSuffix("@nyit.edu")) == true){
                     self.performSegue(withIdentifier: "mainView", sender: self)
                 }else{
+                    try! Auth.auth().signOut()
                     self.performSegue(withIdentifier: "whoopsScreen", sender: self)
                 }
                 return
             }
-        
-        
+
+
         }
         
     }

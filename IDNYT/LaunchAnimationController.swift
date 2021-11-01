@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Firebase
 
 class LaunchAnimationController: UIViewController {
     
@@ -32,11 +34,20 @@ class LaunchAnimationController: UIViewController {
             
         } completion: { done in
             if done {
+                
                 //later we will see if the user is logged in
                 //for now just default to log in screen
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2){
-                    self.performSegue(withIdentifier: "LoginScreen", sender: self)
-                    print("moving to login")
+                    
+                    let user = Auth.auth().currentUser
+                    print("User Exists")
+                    print(user?.email ?? "no email")
+                    if((user?.email?.hasSuffix("@nyit.edu")) == true){
+                        self.performSegue(withIdentifier: "mainView", sender: self)
+                    }else{
+                        self.performSegue(withIdentifier: "LoginScreen", sender: self)
+                        print("moving to login")
+                    }
                 }
 
             }

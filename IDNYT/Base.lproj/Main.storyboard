@@ -36,6 +36,7 @@
                     <connections>
                         <outlet property="nyitIcon" destination="wGg-gZ-myL" id="TEn-dQ-OP1"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginScreen" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Zr7-Eg-UMz"/>
+                        <segue destination="fgF-z9-mFV" kind="presentation" identifier="mainView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RGp-rk-KSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEQ-iM-DvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,6 +150,15 @@
                     <view key="view" contentMode="scaleToFill" id="FEh-Cg-MDU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yay good job" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdz-Lq-OvA">
+                                <rect key="frame" x="186" y="305" width="99" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Px6-iq-hoh"/>
                         <color key="backgroundColor" name="Background"/>
                     </view>
@@ -162,6 +172,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="RGp-rk-KSK"/>
         <segue reference="qjB-QZ-5Sx"/>
     </inferredMetricsTieBreakers>
     <resources>
