@@ -7,7 +7,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -184,7 +183,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="i6B-fZ-G0q"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Digital Card" image="creditcard.circle" catalog="system" id="53N-Of-xb8"/>
                 </viewController>
@@ -200,7 +199,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="9Uw-Et-Z46"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Class List" image="calendar.circle" catalog="system" id="VMM-fE-dmo"/>
                 </viewController>
@@ -216,7 +215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="KqT-tE-Jai"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Health Form" image="heart.circle" catalog="system" id="dWx-bb-Z0a"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -317,6 +316,9 @@
                                 <rect key="frame" x="213" y="359" width="166" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
+                                <connections>
+                                    <action selector="idNumber:" destination="fXZ-e6-HS5" eventType="editingDidEnd" id="Oca-X6-vBs"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbW-4Y-vVH">
                                 <rect key="frame" x="133" y="670" width="148" height="39"/>
@@ -336,7 +338,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Zd-Vp-x3b"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="qib-gw-AJY" secondAttribute="trailing" constant="35" id="4LQ-rW-pwH"/>
                             <constraint firstItem="OyQ-H0-4VE" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="64L-NR-hI3"/>
@@ -401,8 +403,5 @@
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

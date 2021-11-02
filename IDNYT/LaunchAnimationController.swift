@@ -18,6 +18,7 @@ class LaunchAnimationController: UIViewController {
         super.viewDidLoad()
         nyitIcon.alpha = 0
         animate()
+        setTheme()
     }
     
     private func animate(){
@@ -50,5 +51,22 @@ class LaunchAnimationController: UIViewController {
             }
         }
 
+    }
+    
+    private func setTheme(){
+        let userDefaults = UserDefaults.standard
+        let THEME_KEY = "themeKey"
+        let AUTO_THEME = "autoTheme"
+        let LIGHT_THEME = "lightTheme"
+        let DARK_THEME = "darkTheme"
+        let theme = userDefaults.string(forKey: THEME_KEY)
+        let appDelegate = UIApplication.shared.windows.first
+        
+        if(theme == AUTO_THEME){ appDelegate?.overrideUserInterfaceStyle = .unspecified }
+        else if (theme == LIGHT_THEME) { appDelegate?.overrideUserInterfaceStyle = .light }
+        else if (theme == DARK_THEME) { appDelegate?.overrideUserInterfaceStyle = .dark }
+        else {appDelegate?.overrideUserInterfaceStyle = .unspecified }
+        print("our theme is")
+        print(theme ?? "default auto")
     }
 }
