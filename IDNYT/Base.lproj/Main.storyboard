@@ -297,6 +297,9 @@
                                     <segment title="Light"/>
                                     <segment title="Dark"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChangedWith_sender:" destination="fXZ-e6-HS5" eventType="valueChanged" id="MvT-Om-dZE"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ruq-sr-twJ">
                                 <rect key="frame" x="29" y="410" width="168" height="29"/>

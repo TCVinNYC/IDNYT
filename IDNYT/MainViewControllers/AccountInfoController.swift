@@ -30,9 +30,16 @@ class AccountInfoController: UIViewController {
         self.performSegue(withIdentifier: "signOut", sender: self)
     }
     
-    
-    //"testing"
-    /// lets try creating a pr today 
-    
-    
+    @IBAction func indexChanged(_sender: Any){
+        switch appAppearance.selectedSegmentIndex{
+        case 0:
+            overrideUserInterfaceStyle = .unspecified
+        case 1:
+            overrideUserInterfaceStyle = .light
+        case 2:
+            overrideUserInterfaceStyle = .dark
+        default:
+            overrideUserInterfaceStyle = .unspecified
+        }
+    }
 }
