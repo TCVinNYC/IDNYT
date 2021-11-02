@@ -182,14 +182,99 @@
                     <view key="view" contentMode="scaleToFill" id="bXv-ia-GwJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-w7-LtY">
+                                <rect key="frame" x="27.5" y="118" width="277.5" height="50.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="AccentColor"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-XI-eEx">
+                                <rect key="frame" x="27" y="227" width="110" height="27"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="NYIT Card:">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="22" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z9m-BH-eXy">
+                                <rect key="frame" x="65" y="262" width="610" height="171"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yzV-vO-cVp">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="171"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lJZ-ax-njv">
+                                        <rect key="frame" x="310" y="0.0" width="300" height="171"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kET-nH-KC4">
+                                <rect key="frame" x="27" y="463" width="141" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="UjH-Ls-VsB"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Vaccine Card:">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="22" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ep4-hk-SAN">
+                                <rect key="frame" x="65" y="498" width="610" height="171"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-8b-X64">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="171"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OOy-xf-vTo">
+                                        <rect key="frame" x="310" y="0.0" width="300" height="171"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="i6B-fZ-G0q"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="bXv-ia-GwJ" secondAttribute="top" constant="262" id="1l9-15-PDF"/>
+                            <constraint firstItem="lZP-XI-eEx" firstAttribute="top" secondItem="jFJ-w7-LtY" secondAttribute="bottom" constant="58.5" id="1yY-5i-umd"/>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="65" id="7TU-nN-eo1"/>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="trailing" secondItem="i6B-fZ-G0q" secondAttribute="trailing" constant="261" id="8EJ-KN-7du"/>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" symbolic="YES" id="CUo-LP-Fie"/>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" id="CgS-Uf-5wt"/>
+                            <constraint firstItem="kET-nH-KC4" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27" id="Em9-bt-hIp"/>
+                            <constraint firstItem="lZP-XI-eEx" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27" id="IDn-Jx-zfg"/>
+                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" symbolic="YES" id="SWR-cH-Izq"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="kET-nH-KC4" secondAttribute="trailing" constant="246" id="VHb-dL-hvC"/>
+                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="top" secondItem="i6B-fZ-G0q" secondAttribute="top" constant="74" id="VWo-Ow-p3I"/>
+                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="top" secondItem="kET-nH-KC4" secondAttribute="bottom" constant="8" symbolic="YES" id="ZfP-q2-Qof"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="lZP-XI-eEx" secondAttribute="trailing" constant="277" id="cFx-2d-t3B"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="bottom" secondItem="Ep4-hk-SAN" secondAttribute="bottom" constant="144" id="cka-fL-goV"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="jFJ-w7-LtY" secondAttribute="trailing" constant="109" id="crv-rN-Wxb"/>
+                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="65" id="fhb-HT-Vww"/>
+                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="top" secondItem="bXv-ia-GwJ" secondAttribute="top" constant="498" id="gT1-5E-aiC"/>
+                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27.5" id="jct-2O-ILI"/>
+                            <constraint firstItem="kET-nH-KC4" firstAttribute="top" secondItem="yzV-vO-cVp" secondAttribute="bottom" constant="30" id="xol-Wy-UZS"/>
+                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="trailing" secondItem="i6B-fZ-G0q" secondAttribute="trailing" constant="261" id="ys2-Xa-QI5"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Digital Card" image="creditcard.circle" catalog="system" id="53N-Of-xb8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cI-e9-nVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2374" y="294"/>
+            <point key="canvasLocation" x="2373.913043478261" y="293.97321428571428"/>
         </scene>
         <!--Class List-->
         <scene sceneID="0yW-ef-wAe">
