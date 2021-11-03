@@ -31,9 +31,11 @@ class AccountInfoController: UIViewController {
         loadSettings()
         userID.keyboardType = .asciiCapableNumberPad
         userID.returnKeyType = .done
+        //*still need to fix userName
         userName.text = user?.displayName
         userEmail.text = user?.email
         
+        //this is to dismiss the keyboard when a user is done typing
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap) // Add gesture recognizer to background view
     }
