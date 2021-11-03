@@ -18,6 +18,7 @@
 		A3920BD9272E3C3300B51F9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */; };
 		A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */; };
 		A3CAE70527302A6400E42930 /* StoredInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CAE70427302A6400E42930 /* StoredInformation.swift */; };
+		A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA33A227321BF0007FA93C /* DigitalCardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		A3CAE70427302A6400E42930 /* StoredInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredInformation.swift; sourceTree = "<group>"; };
+		A3EA33A227321BF0007FA93C /* DigitalCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardController.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
+				A3EA33A227321BF0007FA93C /* DigitalCardController.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */,
 				A3CAE70527302A6400E42930 /* StoredInformation.swift in Sources */,
 				A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */,
+				A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -364,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -385,6 +389,7 @@
 				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
@@ -416,6 +421,7 @@
 				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
