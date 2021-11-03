@@ -6,7 +6,7 @@
 //
 
 
-// make names + keys for the default images, then if the keys dont have text ("") that means it has a picture of the card
+// make names + keys for the default images, then if the keys dont have text ("") that means it has a picture of the card now
 import UIKit
 import ImageSlideshow
 import WeScan
