@@ -44,6 +44,8 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
         vaxSlideShow.addGestureRecognizer(gestureRec2)
     }
     
+    
+    //****figure out a way for people to hold the image and show the full view
     @objc func didTapNYT(){
         //nyitSlideShow.presentFullScreenController(from: self)
         
