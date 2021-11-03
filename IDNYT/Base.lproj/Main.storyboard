@@ -7,6 +7,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -178,25 +179,24 @@
         <!--Digital Card-->
         <scene sceneID="flr-Wc-DWo">
             <objects>
-                <viewController id="5xY-g8-J7p" sceneMemberID="viewController">
+                <viewController id="5xY-g8-J7p" customClass="DigitalCardController" customModule="IDNYT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bXv-ia-GwJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digital Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-w7-LtY">
-                                <rect key="frame" x="27.5" y="118" width="277.5" height="50.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Digital Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-w7-LtY">
+                                <rect key="frame" x="25" y="119" width="277.5" height="50.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" name="AccentColor"/>
                                 <size key="shadowOffset" width="-1" height="1"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lZP-XI-eEx">
-                                <rect key="frame" x="27" y="227" width="110" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-vV-dES">
+                                <rect key="frame" x="25" y="218" width="112.5" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="NYIT Card:">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="22" name="Futura-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
@@ -205,26 +205,11 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z9m-BH-eXy">
-                                <rect key="frame" x="65" y="262" width="610" height="171"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yzV-vO-cVp">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="171"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lJZ-ax-njv">
-                                        <rect key="frame" x="310" y="0.0" width="300" height="171"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="kET-nH-KC4">
-                                <rect key="frame" x="27" y="463" width="141" height="27"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="UjH-Ls-VsB"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wOq-6E-75V">
+                                <rect key="frame" x="25" y="494" width="141" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Vaccine Card:">
                                         <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="22" name="Futura-Medium"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                             <integer key="NSUnderline" value="1"/>
@@ -233,44 +218,36 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ep4-hk-SAN">
-                                <rect key="frame" x="65" y="498" width="610" height="171"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CN6-8b-X64">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="171"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OOy-xf-vTo">
-                                        <rect key="frame" x="310" y="0.0" width="300" height="171"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-dB-Zr3" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                <rect key="frame" x="40" y="255.5" width="335" height="232.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i6B-fZ-G0q"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="bXv-ia-GwJ" secondAttribute="top" constant="262" id="1l9-15-PDF"/>
-                            <constraint firstItem="lZP-XI-eEx" firstAttribute="top" secondItem="jFJ-w7-LtY" secondAttribute="bottom" constant="58.5" id="1yY-5i-umd"/>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="65" id="7TU-nN-eo1"/>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="trailing" secondItem="i6B-fZ-G0q" secondAttribute="trailing" constant="261" id="8EJ-KN-7du"/>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" symbolic="YES" id="CUo-LP-Fie"/>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" id="CgS-Uf-5wt"/>
-                            <constraint firstItem="kET-nH-KC4" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27" id="Em9-bt-hIp"/>
-                            <constraint firstItem="lZP-XI-eEx" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27" id="IDn-Jx-zfg"/>
-                            <constraint firstItem="Z9m-BH-eXy" firstAttribute="top" secondItem="lZP-XI-eEx" secondAttribute="bottom" constant="8" symbolic="YES" id="SWR-cH-Izq"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="kET-nH-KC4" secondAttribute="trailing" constant="246" id="VHb-dL-hvC"/>
-                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="top" secondItem="i6B-fZ-G0q" secondAttribute="top" constant="74" id="VWo-Ow-p3I"/>
-                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="top" secondItem="kET-nH-KC4" secondAttribute="bottom" constant="8" symbolic="YES" id="ZfP-q2-Qof"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="lZP-XI-eEx" secondAttribute="trailing" constant="277" id="cFx-2d-t3B"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="bottom" secondItem="Ep4-hk-SAN" secondAttribute="bottom" constant="144" id="cka-fL-goV"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="jFJ-w7-LtY" secondAttribute="trailing" constant="109" id="crv-rN-Wxb"/>
-                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="65" id="fhb-HT-Vww"/>
-                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="top" secondItem="bXv-ia-GwJ" secondAttribute="top" constant="498" id="gT1-5E-aiC"/>
-                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="27.5" id="jct-2O-ILI"/>
-                            <constraint firstItem="kET-nH-KC4" firstAttribute="top" secondItem="yzV-vO-cVp" secondAttribute="bottom" constant="30" id="xol-Wy-UZS"/>
-                            <constraint firstItem="Ep4-hk-SAN" firstAttribute="trailing" secondItem="i6B-fZ-G0q" secondAttribute="trailing" constant="261" id="ys2-Xa-QI5"/>
+                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="77v-zh-mha"/>
+                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="top" secondItem="i6B-fZ-G0q" secondAttribute="top" constant="75" id="8l0-cP-tA4"/>
+                            <constraint firstItem="6kT-vV-dES" firstAttribute="top" secondItem="jFJ-w7-LtY" secondAttribute="bottom" constant="48.5" id="B71-lf-ElC"/>
+                            <constraint firstItem="oNf-dB-Zr3" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="40" id="JGv-bm-Xyd"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="6kT-vV-dES" secondAttribute="trailing" constant="276.5" id="JlW-rV-17x"/>
+                            <constraint firstItem="oNf-dB-Zr3" firstAttribute="top" secondItem="6kT-vV-dES" secondAttribute="bottom" constant="8.5" id="KRZ-3T-nVw"/>
+                            <constraint firstItem="wOq-6E-75V" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="dOk-CO-5KE"/>
+                            <constraint firstItem="6kT-vV-dES" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="eXH-lc-aye"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="wOq-6E-75V" secondAttribute="trailing" constant="248" id="l0h-ck-Z7P"/>
+                            <constraint firstItem="wOq-6E-75V" firstAttribute="top" secondItem="oNf-dB-Zr3" secondAttribute="bottom" constant="6" id="or5-nQ-rjx"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="oNf-dB-Zr3" secondAttribute="trailing" constant="39" id="t78-jh-UO6"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="bottom" secondItem="wOq-6E-75V" secondAttribute="bottom" constant="290" id="tHh-bs-BEP"/>
+                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="jFJ-w7-LtY" secondAttribute="trailing" constant="111.5" id="wYv-r2-V5a"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Digital Card" image="creditcard.circle" catalog="system" id="53N-Of-xb8"/>
+                    <connections>
+                        <outlet property="nyitCardLabel" destination="6kT-vV-dES" id="6KA-rk-B5V"/>
+                        <outlet property="nyitSlideShow" destination="oNf-dB-Zr3" id="zI9-if-ZQW"/>
+                        <outlet property="titleLabel" destination="jFJ-w7-LtY" id="Y4P-M5-RCG"/>
+                        <outlet property="vaxCardLabel" destination="wOq-6E-75V" id="1sR-hO-K2F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cI-e9-nVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -468,6 +445,123 @@
             </objects>
             <point key="canvasLocation" x="3231.884057971015" y="293.97321428571428"/>
         </scene>
+        <!--Digital Card-->
+        <scene sceneID="DDH-Uc-qLO">
+            <objects>
+                <viewController id="iQf-CY-XbW" customClass="DigitalCardController" customModule="IDNYT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BD7-d1-giF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" ambiguous="YES" text="Digital Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ffA-w7-VRf">
+                                <rect key="frame" x="25" y="119" width="279" height="50.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" name="AccentColor"/>
+                                <size key="shadowOffset" width="-1" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="H8L-9Y-xy4">
+                                <rect key="frame" x="25" y="224.5" width="112.5" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="NYIT Card:">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaG-0J-NGv">
+                                <rect key="frame" x="-101" y="261" width="650" height="212"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-pB-fak">
+                                        <rect key="frame" x="0.0" y="0.0" width="650" height="212"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BKM-te-J3x">
+                                                <rect key="frame" x="25" y="28" width="600" height="156"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cy8-QQ-Y4d">
+                                                        <rect key="frame" x="0.0" y="1" width="295" height="153.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="cy8-QQ-Y4d" secondAttribute="height" multiplier="295:156" id="rje-um-Nc1"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="EKk-OQ-X0v">
+                                                        <rect key="frame" x="305" y="1" width="295" height="153.5"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="cy8-QQ-Y4d" secondAttribute="height" multiplier="50:13" id="2db-y0-m25"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstItem="BKM-te-J3x" firstAttribute="centerY" secondItem="Wcd-pB-fak" secondAttribute="centerY" id="Dt4-xU-HGe"/>
+                                            <constraint firstItem="BKM-te-J3x" firstAttribute="top" secondItem="Wcd-pB-fak" secondAttribute="top" constant="28" id="lUe-9M-TiP"/>
+                                            <constraint firstItem="BKM-te-J3x" firstAttribute="centerX" secondItem="Wcd-pB-fak" secondAttribute="centerX" id="ncr-QB-eGT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99758130310000004" green="0.0" blue="0.29802599549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Wcd-pB-fak" firstAttribute="top" secondItem="QaG-0J-NGv" secondAttribute="top" id="H6q-Le-xXJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wcd-pB-fak" secondAttribute="bottom" id="Rvb-rN-CDo"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wcd-pB-fak" secondAttribute="trailing" id="cCY-rN-Tra"/>
+                                    <constraint firstItem="Wcd-pB-fak" firstAttribute="centerY" secondItem="QaG-0J-NGv" secondAttribute="centerY" id="heL-db-ewc"/>
+                                    <constraint firstItem="Wcd-pB-fak" firstAttribute="leading" secondItem="QaG-0J-NGv" secondAttribute="leading" id="lFY-6L-oKt"/>
+                                    <constraint firstItem="Wcd-pB-fak" firstAttribute="centerX" secondItem="QaG-0J-NGv" secondAttribute="centerX" id="yLj-3N-nff"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="jPQ-sG-Vcv"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Ik2-hu-0Hl"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="iHP-eT-SFY">
+                                <rect key="frame" x="25" y="481" width="141" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Vaccine Card:">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3tL-1q-kLZ"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="H8L-9Y-xy4" firstAttribute="top" secondItem="ffA-w7-VRf" secondAttribute="bottom" constant="55" id="6CZ-HI-QDc"/>
+                            <constraint firstItem="iHP-eT-SFY" firstAttribute="leading" secondItem="3tL-1q-kLZ" secondAttribute="leading" constant="25" id="901-Zu-Wds"/>
+                            <constraint firstItem="3tL-1q-kLZ" firstAttribute="trailing" secondItem="H8L-9Y-xy4" secondAttribute="trailing" constant="276.5" id="9cC-tL-Zcb"/>
+                            <constraint firstItem="QaG-0J-NGv" firstAttribute="top" secondItem="H8L-9Y-xy4" secondAttribute="bottom" constant="7.5" id="D6l-tR-jMj"/>
+                            <constraint firstItem="3tL-1q-kLZ" firstAttribute="trailing" secondItem="iHP-eT-SFY" secondAttribute="trailing" constant="248" id="NZj-RS-oMu"/>
+                            <constraint firstItem="H8L-9Y-xy4" firstAttribute="leading" secondItem="3tL-1q-kLZ" secondAttribute="leading" constant="25" id="Otl-ak-HFl"/>
+                            <constraint firstItem="ffA-w7-VRf" firstAttribute="top" secondItem="3tL-1q-kLZ" secondAttribute="top" constant="75" id="WeO-f0-JfT"/>
+                            <constraint firstItem="QaG-0J-NGv" firstAttribute="trailing" secondItem="3tL-1q-kLZ" secondAttribute="trailing" constant="135" id="h0J-0P-vpm"/>
+                            <constraint firstItem="3tL-1q-kLZ" firstAttribute="bottom" secondItem="iHP-eT-SFY" secondAttribute="bottom" constant="303" id="jeu-nY-eHs"/>
+                            <constraint firstItem="ffA-w7-VRf" firstAttribute="leading" secondItem="3tL-1q-kLZ" secondAttribute="leading" constant="25" id="k3U-0h-0QN"/>
+                            <constraint firstItem="QaG-0J-NGv" firstAttribute="leading" secondItem="3tL-1q-kLZ" secondAttribute="leading" constant="-101" id="oWp-Mx-g33"/>
+                            <constraint firstItem="iHP-eT-SFY" firstAttribute="top" secondItem="Wcd-pB-fak" secondAttribute="bottom" constant="8" id="xPy-Yv-UUg"/>
+                            <constraint firstItem="3tL-1q-kLZ" firstAttribute="trailing" secondItem="ffA-w7-VRf" secondAttribute="trailing" constant="110" id="y1U-mg-wS0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Digital Card" image="creditcard.circle" catalog="system" id="lQa-92-OEA"/>
+                    <connections>
+                        <outlet property="nyitCardLabel" destination="H8L-9Y-xy4" id="2xc-qu-2rN"/>
+                        <outlet property="nyitScroll" destination="QaG-0J-NGv" id="3ja-dv-Pas"/>
+                        <outlet property="titleLabel" destination="ffA-w7-VRf" id="fVN-aX-U82"/>
+                        <outlet property="vaxCardLabel" destination="iHP-eT-SFY" id="zIl-jn-B6z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ao-4u-dDM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2988" y="-578"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="FjJ-vK-hS3"/>
@@ -482,11 +576,15 @@
         <image name="exclamationmark.triangle" catalog="system" width="128" height="112"/>
         <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.91399997472763062" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
