@@ -26,16 +26,14 @@ class AccountInfoController: UIViewController {
     
     let user = Auth.auth().currentUser
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSettings()
         userID.keyboardType = .asciiCapableNumberPad
         userID.returnKeyType = .done
-        //*still need to fix userName
         userName.text = user?.displayName
         userEmail.text = user?.email
-        
-        //this is to dismiss the keyboard when a user is done typing
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         view.addGestureRecognizer(tap) // Add gesture recognizer to background view
     }
@@ -66,8 +64,10 @@ class AccountInfoController: UIViewController {
         appDelegate?.overrideUserInterfaceStyle = .unspecified
         userDefaults.set(AUTO_THEME, forKey: THEME_KEY)
         userDefaults.set("", forKey: ID_KEY)
+        return
     }
     
+    //handles app appearance
     @IBAction func indexChanged(_sender: Any){
         switch appAppearance.selectedSegmentIndex{
         case 0:
@@ -87,5 +87,13 @@ class AccountInfoController: UIViewController {
     
     @objc func handleTap() {
         userID.resignFirstResponder() // dismiss keyoard
+    }
+    
+    //disables paste feature because of the TextBox
+    open override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        if action == #selector(UIResponderStandardEditActions.paste(_:)){
+            return false
+        }
+        return super.canPerformAction(action, withSender: sender)
     }
 }

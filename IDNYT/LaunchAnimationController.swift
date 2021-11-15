@@ -12,6 +12,7 @@ import Firebase
 class LaunchAnimationController: UIViewController {
     
     @IBOutlet weak var nyitIcon: UIImageView!
+    private var db  = Firestore.firestore()
     
     
     override func viewDidLoad() {
@@ -19,6 +20,32 @@ class LaunchAnimationController: UIViewController {
         nyitIcon.alpha = 0
         animate()
         setTheme()
+        //uploadFile2FireStore()
+        return
+    }
+    
+    func uploadFile2FireStore(){
+        
+        do{
+            
+            let fileURL = Bundle.main.url(forResource: "Fall2021ProfList", withExtension: "txt")!
+            let file = try String(contentsOfFile: fileURL.path)
+            let text : [String] = file.components(separatedBy: "\n")
+            
+            for line in text{
+                
+                db.collection("users").document("\(line)").setData([
+                    "email": "\(line)",
+                    "type": "professor"
+                ])
+                
+                print("added \(line)")
+            }
+            
+        }catch let error {
+            print("error: \(error.localizedDescription)")
+        }
+    
     }
     
     private func animate(){

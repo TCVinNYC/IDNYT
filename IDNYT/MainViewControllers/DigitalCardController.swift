@@ -24,6 +24,7 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //set up view
         loadImages()
         nyitSlideShow.zoomEnabled = true
         nyitSlideShow.circular = false
@@ -81,8 +82,6 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
         //saves image to app locally
         if(nyitPosition == 0){
             print("replacing nyitFront")
-            //sets first image
-
             let imageData = results.croppedScan.image.jpegData(compressionQuality: 1.0)
             UserDefaults.standard.set(imageData, forKey: "nyitFront")
             print("dismissing scanner")
@@ -91,7 +90,6 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
 
         }else if(nyitPosition == 1){
             print("replacing nyitBack")
-            //sets first image
             let imageData = results.croppedScan.image.jpegData(compressionQuality: 1.0)
             UserDefaults.standard.set(imageData, forKey: "nyitBack")
             print("dismissing scanner")
@@ -100,7 +98,6 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
             
         }else if(vaxPosition == 0){
             print("replacing vaxFront")
-            //sets first image
             let imageData = results.croppedScan.image.jpegData(compressionQuality: 1.0)
             UserDefaults.standard.set(imageData, forKey: "vaxFront")
             print("dismissing scanner")
@@ -109,7 +106,6 @@ class DigitalCardController: UIViewController, ImageScannerControllerDelegate {
 
         }else if(vaxPosition == 1){
             print("replacing vaxBack")
-            //sets first image
             let imageData = results.croppedScan.image.jpegData(compressionQuality: 1.0)
             UserDefaults.standard.set(imageData, forKey: "vaxBack")
             print("dismissing scanner")

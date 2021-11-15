@@ -17,11 +17,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         //sets 4 images to UserData for scanning cards later
-      //  guard let data = UIImage(named: "AddImage")?.jpegData(compressionQuality: 0) else {return}
-       // let encoded = try! PropertyListEncoder().encode(data)
-        
         let defaultImage = UIImage(named: "AddImage")
-        
         let imageData = defaultImage?.jpegData(compressionQuality: 1.0)
         UserDefaults.standard.set(imageData, forKey: "nyitFront")
         UserDefaults.standard.set(imageData, forKey: "nyitBack")
@@ -32,6 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInClick(_ sender: Any) {
         signIn()
+        return
     }
     
     func signIn(){
