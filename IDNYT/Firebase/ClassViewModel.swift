@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 import FirebaseAuth
 
 class ClassViewModel : ObservableObject{
@@ -82,7 +83,16 @@ class ClassViewModel : ObservableObject{
     }
     
     func updateCourse(courseToUpdate: ClassModel){
-        db.collection("courses").document(courseToUpdate.id).setData(["professor_name":courseToUpdate.prof_name, "professor_email":courseToUpdate.prof_email, "course_name":courseToUpdate.course_name, "course_section":courseToUpdate.course_section, "course_location":courseToUpdate.course_location, "course_start_time":courseToUpdate.course_time_start, "course_end_time":courseToUpdate.course_time_end, "course_days":courseToUpdate.course_days, "course_semester":courseToUpdate.course_semester]){
+        db.collection("courses").document(courseToUpdate.id!).updateData(
+            ["professor_name":courseToUpdate.prof_name,
+             "professor_email":courseToUpdate.prof_email,
+             "course_name":courseToUpdate.course_name,
+             "course_section":courseToUpdate.course_section,
+             "course_location":courseToUpdate.course_location,
+             "course_start_time":courseToUpdate.course_time_start,
+             "course_end_time":courseToUpdate.course_time_end,
+             "course_days":courseToUpdate.course_days,
+             "course_semester":courseToUpdate.course_semester]){
             error in
             if error == nil {
                 self.getProfessorCourses { String in
@@ -94,6 +104,27 @@ class ClassViewModel : ObservableObject{
             }
         }
     }
+    
+//    func getSpecificCourse(findID:String, completion: @escaping ((ClassModel))){
+//        db.collection("courses").document(findID).getDocument(source: .cache) {(document, error) in
+//            if let doc = document {
+//                let temp = ClassModel(id: findID, prof_name: doc["professor_name"] as? String ?? "",
+//                                  prof_email: doc["professor_email"] as? String ?? "",
+//                                  course_name: doc["course_name"] as? String ?? "",
+//                                  course_section: doc["course_section"] as? String ?? "",
+//                                  course_location: doc["course_location"] as? String ?? "",
+//                                  course_time_start: doc["course_start_time"] as? String ?? "",
+//                                  course_time_end: doc["course_end_time"] as? String ?? "",
+//                                  course_days: doc["course_days"] as? [String] ?? [],
+//                                  course_semester: doc["course_semester"] as? String ?? "")
+//                completion(temp)
+//            }else{
+//                print("error finding course")
+//                return
+//                
+//            }
+//        }
+//    }
     
     
 }

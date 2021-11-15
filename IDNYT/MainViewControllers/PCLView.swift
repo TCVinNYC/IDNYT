@@ -19,6 +19,12 @@ struct PCLView: View {
     @State var showSheet = false
     @State private var isShowingDetailView = false
     
+    @State private var currentID = ""
+    
+    var countArr = [Int]()
+    var count : Int = 0
+   // var tempCourse : ClassModel = ClassModel.init(id: "", prof_name: "", prof_email: "", course_name: "", course_section: "", course_location: "", course_time_start: "", course_time_end: "", course_days: [], course_semester: "")
+    
     @State private var isLoading = true
     var body: some View {
         NavigationView{
@@ -29,67 +35,85 @@ struct PCLView: View {
                         .scaleEffect(1.5)
                         .padding(.bottom, 50)
                     } else{
-                        Spacer()
-                        ScrollView{
-                            ForEach(model.classes, id: \.self) {data in
-                                NavigationLink(destination: editClass(), isActive: $isShowingDetailView){
-                                    
-                                    Button(action: {isShowingDetailView = true}){
-                                        VStack(alignment: .leading, spacing: 3){
-                                            Text("\(data.course_name) - \(data.course_section)")
-                                                .bold()
-                                                //.minimumScaleFactor(0.001)
-                                                .lineLimit(2)
-                                                .font(.system(size: 23))
+                       // Spacer()
+                        //ScrollView{
+                        ZStack{
+                            List{
+                                ForEach(model.classes, id: \.self) {data in
+                                    NavigationLink(destination: editClass(currentCourse: data)){
+//                                        Button(action: {
+//                                            isShowingDetailView = true
+//                                           // print(data.course_name)
+//                                        }){
+                                            VStack(alignment: .leading, spacing: 3){
                                                 
-                                            Text(data.course_location)
-                                                .minimumScaleFactor(0.001)
-                                                .lineLimit(1)
-                                                .font(.subheadline)
-                                            Text("\(data.course_time_start) - \(data.course_time_end)")
-                                                .minimumScaleFactor(0.001)
-                                                .lineLimit(1)
-                                                .font(.subheadline)
-                                            Text(data.course_days.joined(separator: ", "))
-                                                .minimumScaleFactor(0.001)
-                                                .lineLimit(1)
-                                                .font(.subheadline)
+                                                Text("\(data.course_name) - \(data.course_section)")
+                                                    .bold()
+                                                    //.minimumScaleFactor(0.001)
+                                                    .lineLimit(2)
+                                                    .font(.system(size: 23))
+                                                    
+                                                Text(data.course_location)
+                                                    .minimumScaleFactor(0.001)
+                                                    .lineLimit(1)
+                                                    .font(.subheadline)
+                                                Text("\(data.course_time_start) - \(data.course_time_end)")
+                                                    .minimumScaleFactor(0.001)
+                                                    .lineLimit(1)
+                                                    .font(.subheadline)
+                                                Text(data.course_days.joined(separator: ", "))
+                                                    .minimumScaleFactor(0.001)
+                                                    .lineLimit(1)
+                                                    .font(.subheadline)
                                                 
+                                            
+                                            
                                         }
-                                        .frame(minWidth: UIScreen.main.bounds.size.width - 95, idealWidth: UIScreen.main.bounds.size.width - 95, maxWidth: UIScreen.main.bounds.size.width - 95, alignment: .leading)
-                                       
+                                        //.buttonStyle(PlainButtonStyle())
+                                            
+//                                        .frame(minWidth: UIScreen.main.bounds.size.width - 95, idealWidth: UIScreen.main.bounds.size.width - 95, maxWidth: UIScreen.main.bounds.size.width - 95, alignment: .leading)
+//                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 95, minHeight: UIScreen.main.bounds.size.height/9)
+//                                        .frame(maxHeight: UIScreen.main.bounds.size.height/6)
+//                                        .padding()
+//                                        .background(Color.blue)
+//                                        .cornerRadius(20)
+                                 
+                                        
+                                        
+                                        
                                     }
-                                    .frame(maxWidth: UIScreen.main.bounds.size.width - 95, minHeight: UIScreen.main.bounds.size.height/9)
-                                    .frame(maxHeight: UIScreen.main.bounds.size.height/6)
-                                    .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(20)
                                 }
                             }
-                        }
-                        HStack{
-                            Spacer()
-                            Button(action: {self.showSheet.toggle()}){
-                                Image(systemName: "plus")
-                                    .font(.title3)
-                                Text("Add Class")
-                                    .font(.title3)
-                            }.sheet(isPresented: $showSheet){
-                                addClass(showSheet: self.$showSheet)
+                            //.listStyle(InsetGroupedListStyle())
+                            
+                            HStack{
+                                Spacer()
+                                Button(action: {self.showSheet.toggle()}){
+                                    Image(systemName: "plus")
+                                        .font(.title3)
+                                    Text("Add Class")
+                                        .font(.title3)
+                                }.sheet(isPresented: $showSheet){
+                                    addClass(showSheet: self.$showSheet)
+                                }
+                                .padding(20)
+                                .foregroundColor(Color.black)
+                                .background(Color.accentColor)
+                                .cornerRadius(.infinity)
+                                .shadow(color: Color.gray, radius: 1, x: 2, y: 3)
                             }
-                            .padding(20)
-                            .foregroundColor(Color.black)
-                            .background(Color.accentColor)
-                            .cornerRadius(.infinity)
-                            .shadow(color: Color.gray, radius: 1, x: 2, y: 3)
-                        }
-                        .padding(.trailing, 15)
-                        .padding(.bottom, 15)
-                    }
+                            //.frame(minHeight: UIScreen.main.bounds.size.height - 10)
+                            .frame(maxHeight: .infinity, alignment: .bottom)
+                            .padding(.trailing, 15)
+                            .padding(.bottom, 15)
+                            .background(.clear)
+                          //  }
 
-                    
+                            
+                        }
                     
                 }
+            }
             .navigationTitle("My Class List")
         }
         .onAppear(perform: downloadCoursesCall)
@@ -312,7 +336,10 @@ struct addClass: View{
 }
 
 struct editClass: View{
-    @ObservedObject var model = ClassViewModel()
+    var currentCourse: ClassModel
+   // @State private var tempCourse : ClassModel
+ //   @ObservedObject var model = ClassViewModel()
+  //  public var tempCourse : ClassModel
     
     @State private var course_name : String = ""
     @State private var course_section : String = ""
@@ -330,6 +357,7 @@ struct editClass: View{
     @State private var didTap5: Bool = false
     @State private var didTap6: Bool = false
     @State private var didTap7: Bool = false
+    
     
     var body : some View {
         NavigationView{
@@ -496,12 +524,38 @@ struct editClass: View{
                 .padding(.top, 30)
                 Spacer()
             }
-            .navigationTitle("Enter Course Info")
+            .onAppear(perform: {
+                //tempCourse = currentCourse
+                course_name = currentCourse.course_name
+                course_section = currentCourse.course_section
+                course_semester = currentCourse.course_semester
+                course_location = currentCourse.course_location
+             //   course_time_start = string2Time(timeS: currentCourse.course_time_start)
+              //  course_time_end = string2Time(timeS: currentCourse.course_time_end)
+                course_semester = currentCourse.course_semester
+                
+                if(currentCourse.course_days.contains("Mon")){didTap1=true}
+                if(currentCourse.course_days.contains("Tue")){didTap2=true}
+                if(currentCourse.course_days.contains("Wed")){didTap3=true}
+                if(currentCourse.course_days.contains("Thu")){didTap4=true}
+                if(currentCourse.course_days.contains("Fri")){didTap5=true}
+                
+            })
+            .navigationTitle("Edit Course Info")
         }
     }
 }
 
+func string2Time(timeS : String){
+    // Create Date Formatter
+    let dateFormatter = DateFormatter()
 
+    // Set Date Format
+    dateFormatter.dateFormat = "hh:mm"
+
+    // Convert String to Date
+    dateFormatter.date(from: timeS)
+}
 
 
 struct PCLView_Previews: PreviewProvider {
@@ -524,7 +578,7 @@ func currentYear() -> String {
 
 //                                Button(action: {isShowingDetailView = true}){
 //                                    VStack(alignment: .leading, spacing: 3){
-//                                        Text("pokfpfjiormo ashdilwsui")
+//                                        Text("pokfpfjiormo ashdilws,,ui")
 //                                            .bold()
 //                                            .font(.system(size: 23))
 //                                        Text("data.course_location")

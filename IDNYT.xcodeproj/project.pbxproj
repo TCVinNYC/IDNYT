@@ -20,6 +20,7 @@
 		A3920BD9272E3C3300B51F9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */; };
 		A39D8E9B273F21E200AC6E1F /* Fall2021ProfList.txt in Resources */ = {isa = PBXBuildFile; fileRef = A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */; };
 		A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */; };
+		A3B77FF62741E3E000803336 /* EditCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B77FF52741E3E000803336 /* EditCourses.swift */; };
 		A3C061152739FC0D000317B1 /* PCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C061142739FC0D000317B1 /* PCLView.swift */; };
 		A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */; };
 		A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9729B273E00060077DCB9 /* ClassModel.swift */; };
@@ -43,6 +44,7 @@
 		A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fall2021ProfList.txt; sourceTree = "<group>"; };
 		A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
+		A3B77FF52741E3E000803336 /* EditCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourses.swift; sourceTree = "<group>"; };
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
 		A3C9729B273E00060077DCB9 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
 				A3C061142739FC0D000317B1 /* PCLView.swift */,
+				A3B77FF52741E3E000803336 /* EditCourses.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
 				A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */,
+				A3B77FF62741E3E000803336 /* EditCourses.swift in Sources */,
 				A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */,
 				A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */,
 				A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */,

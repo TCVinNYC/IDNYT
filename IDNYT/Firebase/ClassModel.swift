@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-struct ClassModel : Identifiable, Hashable{
-    var id : String
+struct ClassModel : Identifiable, Codable, Hashable{
+    @DocumentID var id : String? = UUID().uuidString
     //var prof_image : Image
     var prof_name : String
     var prof_email : String
@@ -21,3 +22,8 @@ struct ClassModel : Identifiable, Hashable{
     var course_days : [String]
     var course_semester : String
 }
+
+//func copyData(id: String, prof_name: String, prof_email:String, course_name:String, course_section:String, course_location:String, couse_time_start:String){
+//    
+//    
+//}
