@@ -21,6 +21,7 @@ struct ClassModel : Identifiable, Codable, Hashable{
     var course_time_end : String
     var course_days : [String]
     var course_semester : String
+    var student_list : [String]
 }
 
 //func copyData(id: String, prof_name: String, prof_email:String, course_name:String, course_section:String, course_location:String, couse_time_start:String){

@@ -19,13 +19,9 @@ struct PCLView: View {
     @State var showSheet = false
     @State private var isShowingDetailView = false
     
-    @State private var currentID = ""
-    
-    var countArr = [Int]()
-    var count : Int = 0
-   // var tempCourse : ClassModel = ClassModel.init(id: "", prof_name: "", prof_email: "", course_name: "", course_section: "", course_location: "", course_time_start: "", course_time_end: "", course_days: [], course_semester: "")
     
     @State private var isLoading = true
+    
     var body: some View {
         NavigationView{
                 VStack{
@@ -35,8 +31,6 @@ struct PCLView: View {
                         .scaleEffect(1.5)
                         .padding(.bottom, 50)
                     } else{
-                       // Spacer()
-                        //ScrollView{
                         ZStack{
                             List{
                                 ForEach(model.classes, id: \.self) {data in
@@ -65,26 +59,10 @@ struct PCLView: View {
                                                     .minimumScaleFactor(0.001)
                                                     .lineLimit(1)
                                                     .font(.subheadline)
-                                                
-                                            
-                                            
-                                        }
-                                        //.buttonStyle(PlainButtonStyle())
-                                            
-//                                        .frame(minWidth: UIScreen.main.bounds.size.width - 95, idealWidth: UIScreen.main.bounds.size.width - 95, maxWidth: UIScreen.main.bounds.size.width - 95, alignment: .leading)
-//                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 95, minHeight: UIScreen.main.bounds.size.height/9)
-//                                        .frame(maxHeight: UIScreen.main.bounds.size.height/6)
-//                                        .padding()
-//                                        .background(Color.blue)
-//                                        .cornerRadius(20)
-                                 
-                                        
-                                        
-                                        
+                                            }
                                     }
                                 }
                             }
-                            //.listStyle(InsetGroupedListStyle())
                             
                             HStack{
                                 Spacer()
@@ -102,19 +80,21 @@ struct PCLView: View {
                                 .cornerRadius(.infinity)
                                 .shadow(color: Color.gray, radius: 1, x: 2, y: 3)
                             }
-                            //.frame(minHeight: UIScreen.main.bounds.size.height - 10)
                             .frame(maxHeight: .infinity, alignment: .bottom)
                             .padding(.trailing, 15)
                             .padding(.bottom, 15)
                             .background(.clear)
-                          //  }
-
-                            
                         }
                     
                 }
             }
             .navigationTitle("My Class List")
+            .toolbar{
+                Menu("Fall 2021"){
+                    Button("Placeholder for all semesters"){}
+                }
+                .foregroundColor(.blue)
+            }
         }
         .onAppear(perform: downloadCoursesCall)
     }
@@ -161,11 +141,15 @@ struct addClass: View{
     @State private var didTap7: Bool = false
     
     @Binding var showSheet: Bool
+    @State private var textEditorText:String = ""
+    @Environment(\.dismiss) var dismiss
     
     var body : some View {
         NavigationView{
             ScrollView{
                 VStack(alignment: .center){
+                    Group{
+                        
                     Label("Course Name & Section:", systemImage: "book.circle.fill")
                         .frame(width: 340, height: 35, alignment: .leading)
                         .font(.system(size: 23))
@@ -200,7 +184,9 @@ struct addClass: View{
                                 .stroke(Color.black, lineWidth: 0.5).opacity(0.5)
                         )
                         .frame(width: 330)
+                    }
                     
+                    Group{
                     Label("Days & Times:", systemImage: "clock.circle.fill")
                         .font(.system(size: 23))
                         .imageScale(.large)
@@ -265,6 +251,7 @@ struct addClass: View{
                             .padding(.trailing)
                         Spacer()
                     }
+                }
                     
                         Label("Semester for \(currentYear()):", systemImage: "globe.americas.fill")
                             .font(.system(size: 23))
@@ -279,22 +266,37 @@ struct addClass: View{
                         }
                         .pickerStyle(.segmented)
                         .frame(width: 330)
-                        
-//                        Label("All Attendee Emails:", systemImage: "globe.americas.fill")
-//                            .font(.system(size: 23))
-//                            .imageScale(.large)
-//                            .frame(width: 340, height: 35, alignment: .leading)
-//                            .padding(.top)
-//    
-//                        TextEditor(text: .constant("After each email add a comma or space"))
-//                            .padding()
-//                            .foregroundColor(.black)
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 4)
-//                                    .stroke(Color.black, lineWidth:2).opacity(0.4)
-//                            )
-//                            .frame(width: 330, height: 150)
 
+                        Label("All Attendee Emails:", systemImage: "globe.americas.fill")
+                            .font(.system(size: 23))
+                            .imageScale(.large)
+                            .frame(width: 340, height: 35, alignment: .leading)
+                            .padding(.top)
+                    
+                    ZStack(alignment: .topLeading){
+                        if textEditorText == "" {
+                            Text("After each email add a comma")
+                                .foregroundColor(Color.primary.opacity(0.30))
+                                .font(.system(size: 15))
+                                .padding(.top, 7)
+                                .padding(.leading, 20)
+                        }
+                        TextEditor(text: $textEditorText)
+                            .font(.system(size: 15))
+                            .foregroundColor(.black)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.black, lineWidth:3).opacity(0.4)
+                            )
+                            .frame(width: 330, height: 250)
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }.onAppear(){
+                        UITextView.appearance().backgroundColor = .clear
+                    }.onDisappear(){
+                        UITextView.appearance().backgroundColor = nil
+                    }
                     
                     HStack(alignment: .center){
                         Button("Upload"){
@@ -307,7 +309,7 @@ struct addClass: View{
                             if(didTap4){days.append("Thu")}
                             if(didTap5){days.append("Fri")}
                             
-                            model.addCourse(prof_name: Auth.auth().currentUser?.displayName ?? "Temp Name", prof_email: Auth.auth().currentUser?.email ?? "Temp Email", c_name: course_name, section: course_section, location: course_location, time_s: course_time_start.formatted(date: .omitted, time: .standard), time_e: course_time_end.formatted(date: .omitted, time: .standard), days: days, semester: "\(course_semester) \(currentYear())")
+                            model.addCourse(prof_name: Auth.auth().currentUser?.displayName ?? "Temp Name", prof_email: Auth.auth().currentUser?.email ?? "Temp Email", c_name: course_name, section: course_section, location: course_location, time_s: course_time_start.formatted(date: .omitted, time: .standard), time_e: course_time_end.formatted(date: .omitted, time: .standard), days: days, semester: "\(course_semester) \(currentYear())", student_list: [])
                             self.showSheet = false
                         }
                             .foregroundColor(.white)
@@ -337,9 +339,7 @@ struct addClass: View{
 
 struct editClass: View{
     var currentCourse: ClassModel
-   // @State private var tempCourse : ClassModel
- //   @ObservedObject var model = ClassViewModel()
-  //  public var tempCourse : ClassModel
+    @ObservedObject var model = ClassViewModel()
     
     @State private var course_name : String = ""
     @State private var course_section : String = ""
@@ -358,11 +358,14 @@ struct editClass: View{
     @State private var didTap6: Bool = false
     @State private var didTap7: Bool = false
     
+    @State private var textEditorText:String = ""
     
+    @Environment(\.dismiss) var dismiss
     var body : some View {
-        NavigationView{
             ScrollView{
                 VStack(alignment: .center){
+                    Group{
+                        
                     Label("Course Name & Section:", systemImage: "book.circle.fill")
                         .frame(width: 340, height: 35, alignment: .leading)
                         .font(.system(size: 23))
@@ -397,7 +400,9 @@ struct editClass: View{
                                 .stroke(Color.black, lineWidth: 0.5).opacity(0.5)
                         )
                         .frame(width: 330)
+                    }
                     
+                    Group{
                     Label("Days & Times:", systemImage: "clock.circle.fill")
                         .font(.system(size: 23))
                         .imageScale(.large)
@@ -462,6 +467,7 @@ struct editClass: View{
                             .padding(.trailing)
                         Spacer()
                     }
+                }
                     
                         Label("Semester for \(currentYear()):", systemImage: "globe.americas.fill")
                             .font(.system(size: 23))
@@ -476,26 +482,42 @@ struct editClass: View{
                         }
                         .pickerStyle(.segmented)
                         .frame(width: 330)
-                        
-//                        Label("All Attendee Emails:", systemImage: "globe.americas.fill")
-//                            .font(.system(size: 23))
-//                            .imageScale(.large)
-//                            .frame(width: 340, height: 35, alignment: .leading)
-//                            .padding(.top)
-//
-//                        TextEditor(text: .constant("After each email add a comma or space"))
-//                            .padding()
-//                            .foregroundColor(.black)
-//                            .overlay(
-//                                RoundedRectangle(cornerRadius: 4)
-//                                    .stroke(Color.black, lineWidth:2).opacity(0.4)
-//                            )
-//                            .frame(width: 330, height: 150)
+
+                        Label("All Attendee Emails:", systemImage: "globe.americas.fill")
+                            .font(.system(size: 23))
+                            .imageScale(.large)
+                            .frame(width: 340, height: 35, alignment: .leading)
+                            .padding(.top)
+                    
+                    ZStack(alignment: .topLeading){
+                        if textEditorText == "" {
+                            Text("After each email add a comma")
+                                .foregroundColor(Color.primary.opacity(0.30))
+                                .font(.system(size: 15))
+                                .padding(.top, 7)
+                                .padding(.leading, 20)
+                        }
+                        TextEditor(text: $textEditorText)
+                            .font(.system(size: 15))
+                            .foregroundColor(.black)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.black, lineWidth:3).opacity(0.4)
+                            )
+                            .frame(width: 330, height: 250)
+                            .cornerRadius(10)
+                            .padding(.leading)
+                            .padding(.trailing)
+                    }.onAppear(){
+                        UITextView.appearance().backgroundColor = .clear
+                    }.onDisappear(){
+                        UITextView.appearance().backgroundColor = nil
+                    }
 
                     
                     HStack(alignment: .center){
-                        Button("Upload"){
-                            print("uploading...")
+                        Button("Update"){
+                            print("updating data...")
                             
                             var days: [String] = []
                             if(didTap1){days.append("Mon")}
@@ -503,6 +525,24 @@ struct editClass: View{
                             if(didTap3){days.append("Wed")}
                             if(didTap4){days.append("Thu")}
                             if(didTap5){days.append("Fri")}
+                            
+                            let separator = CharacterSet(charactersIn: " ,-;:\n")
+                            let tempStudentArr : [String] = textEditorText.components(separatedBy: separator)
+                            var finalStudentArr:[String] = []
+                            for student in tempStudentArr{
+                                if(student.hasSuffix("nyit.edu")){
+                                    finalStudentArr.append(student)
+                                }
+                            }
+                            
+                            let formatter = DateFormatter()
+                            formatter.dateStyle = .none
+                            formatter.timeStyle = .short
+                            
+                            let tempCourse = ClassModel.init(id: currentCourse.id, prof_name: currentCourse.prof_name, prof_email: currentCourse.prof_email, course_name: course_name, course_section: course_section, course_location: course_location, course_time_start: formatter.string(from: course_time_start), course_time_end: formatter.string(from: course_time_end), course_days: days, course_semester: course_semester, student_list: finalStudentArr.sorted())
+                            
+                            model.updateCourse(courseToUpdate: tempCourse)
+                            dismiss()
                         }
                             .foregroundColor(.white)
                             .padding(.all, 12)
@@ -510,7 +550,9 @@ struct editClass: View{
                             .font(.title3.bold())
                             .cornerRadius(8)
                         
-                        Button("Cancel"){}
+                        Button("Cancel"){
+                            dismiss()
+                        }
                             .foregroundColor(.white)
                             .padding(.all, 12)
                             .background(Color.red)
@@ -525,43 +567,38 @@ struct editClass: View{
                 Spacer()
             }
             .onAppear(perform: {
-                //tempCourse = currentCourse
+                let formatter = DateFormatter()
+                formatter.dateFormat = "hh:mm a"
+                
                 course_name = currentCourse.course_name
                 course_section = currentCourse.course_section
                 course_semester = currentCourse.course_semester
                 course_location = currentCourse.course_location
-             //   course_time_start = string2Time(timeS: currentCourse.course_time_start)
-              //  course_time_end = string2Time(timeS: currentCourse.course_time_end)
-                course_semester = currentCourse.course_semester
+                course_time_start = formatter.date(from: currentCourse.course_time_start) ?? Date.now
+                course_time_end = formatter.date(from: currentCourse.course_time_end) ?? Date.now
+                course_semester = currentCourse.course_semester.components(separatedBy: " ").first ?? "Fall"
+                textEditorText = currentCourse.student_list.joined(separator: ", ")
                 
                 if(currentCourse.course_days.contains("Mon")){didTap1=true}
                 if(currentCourse.course_days.contains("Tue")){didTap2=true}
                 if(currentCourse.course_days.contains("Wed")){didTap3=true}
                 if(currentCourse.course_days.contains("Thu")){didTap4=true}
                 if(currentCourse.course_days.contains("Fri")){didTap5=true}
-                
             })
             .navigationTitle("Edit Course Info")
-        }
+            .toolbar{
+                Button("Delete"){
+                    model.deleteCourse(docID: currentCourse.id!)
+                    dismiss()
+                }
+                .foregroundColor(.red)
+            }
     }
 }
-
-func string2Time(timeS : String){
-    // Create Date Formatter
-    let dateFormatter = DateFormatter()
-
-    // Set Date Format
-    dateFormatter.dateFormat = "hh:mm"
-
-    // Convert String to Date
-    dateFormatter.date(from: timeS)
-}
-
 
 struct PCLView_Previews: PreviewProvider {
     static var previews: some View {
         PCLView()
-            .previewDevice("iPhone 13 Pro Max")
     }
 }
 

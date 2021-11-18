@@ -12,7 +12,8 @@ import FirebaseAuth
 
 class ClassViewModel : ObservableObject{
     
-    let userEmail = "schittum@nyit.edu"///Auth.auth().currentUser?.email
+    ///schittum@nyit.edu
+    let userEmail = Auth.auth().currentUser?.email
     
     @Published var classes = [ClassModel]()
     
@@ -20,9 +21,8 @@ class ClassViewModel : ObservableObject{
     private var db  = Firestore.firestore()
     
     //later you can add the field comparing the semesters (maybe only give it to professor for now
-    
     func getProfessorCourses(completion: @escaping ((String) -> Void)){
-        db.collection("courses").whereField("professor_email", isEqualTo: userEmail).getDocuments() {(querySnapshot, err) in
+        db.collection("courses").whereField("professor_email", isEqualTo: userEmail).addSnapshotListener {(querySnapshot, err) in
             if let err = err {
                 print("no docs - \(err)")
                 completion("no docs")
@@ -37,7 +37,8 @@ class ClassViewModel : ObservableObject{
                                course_time_start: doc["course_start_time"] as? String ?? "",
                                course_time_end: doc["course_end_time"] as? String ?? "",
                                course_days: doc["course_days"] as? [String] ?? [],
-                               course_semester: doc["course_semester"] as? String ?? "")
+                               course_semester: doc["course_semester"] as? String ?? "",
+                               student_list: doc["student_list"] as? [String] ?? [])
                     
                 }))!
                 completion("done")
@@ -45,10 +46,11 @@ class ClassViewModel : ObservableObject{
         }
     }
     
-    func getStudentCourses(){
-        db.collection("courses").whereField("students", isEqualTo: userEmail).getDocuments() {(querySnapshot, err) in
+    func getStudentCourses(completion: @escaping ((String) -> Void)){
+        db.collection("courses").whereField("student_list", arrayContains: "schittum@nyit.edu").addSnapshotListener {(querySnapshot, err) in
             if let err = err {
                 print("no docs - \(err)")
+                completion("no docs")
             }else{
                 self.classes = (querySnapshot?.documents.map({ doc in
                     ClassModel(id: doc.documentID,
@@ -60,16 +62,18 @@ class ClassViewModel : ObservableObject{
                                course_time_start: doc["course_start_time"] as? String ?? "",
                                course_time_end: doc["course_end_time"] as? String ?? "",
                                course_days: doc["course_days"] as? [String] ?? [],
-                               course_semester: doc["course_semester"] as? String ?? "")
+                               course_semester: doc["course_semester"] as? String ?? "",
+                               student_list: doc["student_list"] as? [String] ?? [])
                     
                 }))!
+                completion("done")
             }
         }
     }
     
-    func addCourse(prof_name:String, prof_email:String, c_name: String, section: String, location: String, time_s: String, time_e: String, days:[String], semester: String) {
+    func addCourse(prof_name:String, prof_email:String, c_name: String, section: String, location: String, time_s: String, time_e: String, days:[String], semester: String, student_list:[String]) {
 
-        db.collection("courses").addDocument(data: ["professor_name":prof_name, "professor_email":prof_email, "course_name":c_name, "course_section":section, "course_location":location, "course_start_time":time_s, "course_end_time":time_e, "course_days":days, "course_semester":semester]){error in
+        db.collection("courses").addDocument(data: ["professor_name":prof_name, "professor_email":prof_email, "course_name":c_name, "course_section":section, "course_location":location, "course_start_time":time_s, "course_end_time":time_e, "course_days":days, "course_semester":semester, "student_list":student_list]){error in
             
             if error == nil {
                 self.getProfessorCourses { String in
@@ -92,39 +96,29 @@ class ClassViewModel : ObservableObject{
              "course_start_time":courseToUpdate.course_time_start,
              "course_end_time":courseToUpdate.course_time_end,
              "course_days":courseToUpdate.course_days,
-             "course_semester":courseToUpdate.course_semester]){
+             "course_semester":courseToUpdate.course_semester,
+             "student_list":courseToUpdate.student_list]){
             error in
             if error == nil {
                 self.getProfessorCourses { String in
                     print(String)
                 }
-                print("new course uploaded!")
+                print("course updated!")
             }else{
                 print("course failed to update!")
             }
         }
     }
     
-//    func getSpecificCourse(findID:String, completion: @escaping ((ClassModel))){
-//        db.collection("courses").document(findID).getDocument(source: .cache) {(document, error) in
-//            if let doc = document {
-//                let temp = ClassModel(id: findID, prof_name: doc["professor_name"] as? String ?? "",
-//                                  prof_email: doc["professor_email"] as? String ?? "",
-//                                  course_name: doc["course_name"] as? String ?? "",
-//                                  course_section: doc["course_section"] as? String ?? "",
-//                                  course_location: doc["course_location"] as? String ?? "",
-//                                  course_time_start: doc["course_start_time"] as? String ?? "",
-//                                  course_time_end: doc["course_end_time"] as? String ?? "",
-//                                  course_days: doc["course_days"] as? [String] ?? [],
-//                                  course_semester: doc["course_semester"] as? String ?? "")
-//                completion(temp)
-//            }else{
-//                print("error finding course")
-//                return
-//                
-//            }
-//        }
-//    }
+    func deleteCourse(docID : String){
+        db.collection("courses").document(docID).delete() {err in
+            if let err = err {
+                print("Error removing doc")
+            } else {
+                print("Deleted Doc!")
+            }
+        }
+    }
     
     
 }

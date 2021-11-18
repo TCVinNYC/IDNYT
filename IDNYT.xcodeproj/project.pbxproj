@@ -24,6 +24,7 @@
 		A3C061152739FC0D000317B1 /* PCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C061142739FC0D000317B1 /* PCLView.swift */; };
 		A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */; };
 		A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9729B273E00060077DCB9 /* ClassModel.swift */; };
+		A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */; };
 		A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA33A227321BF0007FA93C /* DigitalCardController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
 		A3C9729B273E00060077DCB9 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
+		A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListUIViewController.swift; sourceTree = "<group>"; };
 		A3EA33A227321BF0007FA93C /* DigitalCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardController.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
 				A3C061142739FC0D000317B1 /* PCLView.swift */,
 				A3B77FF52741E3E000803336 /* EditCourses.swift */,
+				A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */,
 				A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */,
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
+				A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
 				A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */,
 				A3B77FF62741E3E000803336 /* EditCourses.swift in Sources */,
