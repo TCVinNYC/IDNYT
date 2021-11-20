@@ -10,6 +10,7 @@
 		88B7B0E1AB7BB16B5361D7BA /* Pods_IDNYT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */; };
 		A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */; };
 		A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2E27379BE400B5CA0D /* clView.swift */; };
+		A314408C274778C700FB7F7C /* editClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* editClass.swift */; };
 		A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3792269272E4504000C17B4 /* LaunchAnimationController.swift */; };
 		A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */; };
 		A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */; };
@@ -20,11 +21,13 @@
 		A3920BD9272E3C3300B51F9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */; };
 		A39D8E9B273F21E200AC6E1F /* Fall2021ProfList.txt in Resources */ = {isa = PBXBuildFile; fileRef = A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */; };
 		A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */; };
-		A3B77FF62741E3E000803336 /* EditCourses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B77FF52741E3E000803336 /* EditCourses.swift */; };
 		A3C061152739FC0D000317B1 /* PCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C061142739FC0D000317B1 /* PCLView.swift */; };
 		A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */; };
 		A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9729B273E00060077DCB9 /* ClassModel.swift */; };
 		A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */; };
+		A3D9800F27470B8A001CFA79 /* AttendenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */; };
+		A3D9801127470BA5001CFA79 /* AttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801027470BA5001CFA79 /* AttendanceModel.swift */; };
+		A3D9801327470CC4001CFA79 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */; };
 		A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA33A227321BF0007FA93C /* DigitalCardController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,7 @@
 		6397A18D900535AC59B0288F /* Pods-IDNYT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDNYT.release.xcconfig"; path = "Target Support Files/Pods-IDNYT/Pods-IDNYT.release.xcconfig"; sourceTree = "<group>"; };
 		A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		A30E0F2E27379BE400B5CA0D /* clView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clView.swift; sourceTree = "<group>"; };
+		A314408B274778C700FB7F7C /* editClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editClass.swift; sourceTree = "<group>"; };
 		A3792269272E4504000C17B4 /* LaunchAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationController.swift; sourceTree = "<group>"; };
 		A3920BC1272E3BEF00B51F9C /* IDNYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDNYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,11 +49,13 @@
 		A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fall2021ProfList.txt; sourceTree = "<group>"; };
 		A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
-		A3B77FF52741E3E000803336 /* EditCourses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourses.swift; sourceTree = "<group>"; };
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
 		A3C9729B273E00060077DCB9 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListUIViewController.swift; sourceTree = "<group>"; };
+		A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceViewController.swift; sourceTree = "<group>"; };
+		A3D9801027470BA5001CFA79 /* AttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceModel.swift; sourceTree = "<group>"; };
+		A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 		A3EA33A227321BF0007FA93C /* DigitalCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardController.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,12 +120,11 @@
 		A3B71DDC2730A81F008FB7F9 /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A3D9800D27470B74001CFA79 /* ProfessorView */,
 				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
 				A3EA33A227321BF0007FA93C /* DigitalCardController.swift */,
 				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
-				A3C061142739FC0D000317B1 /* PCLView.swift */,
-				A3B77FF52741E3E000803336 /* EditCourses.swift */,
 				A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */,
 			);
 			path = MainViewControllers;
@@ -130,8 +135,20 @@
 			children = (
 				A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */,
 				A3C9729B273E00060077DCB9 /* ClassModel.swift */,
+				A3D9801027470BA5001CFA79 /* AttendanceModel.swift */,
+				A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		A3D9800D27470B74001CFA79 /* ProfessorView */ = {
+			isa = PBXGroup;
+			children = (
+				A3C061142739FC0D000317B1 /* PCLView.swift */,
+				A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */,
+				A314408B274778C700FB7F7C /* editClass.swift */,
+			);
+			path = ProfessorView;
 			sourceTree = "<group>";
 		};
 		A718E55DD957246BB4181445 /* Pods */ = {
@@ -260,14 +277,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D9800F27470B8A001CFA79 /* AttendenceViewController.swift in Sources */,
 				A3920BC9272E3BEF00B51F9C /* LoginViewController.swift in Sources */,
 				A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */,
 				A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */,
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
 				A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */,
+				A314408C274778C700FB7F7C /* editClass.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
+				A3D9801327470CC4001CFA79 /* AttendanceViewModel.swift in Sources */,
 				A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */,
-				A3B77FF62741E3E000803336 /* EditCourses.swift in Sources */,
+				A3D9801127470BA5001CFA79 /* AttendanceModel.swift in Sources */,
 				A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */,
 				A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */,
 				A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */,
@@ -428,7 +448,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -460,7 +480,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

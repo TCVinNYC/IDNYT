@@ -7,16 +7,20 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 
 struct clView: View {
     //Gesture Data
+    
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
     @GestureState var gestureOffset : CGFloat = 0
     
     @ObservedObject var model = ClassViewModel()
+    var attend = AttendanceViewModel()
     
     @State private var isLoading = true
+    @State private var confirmationShown = false
     
     
     var body: some View {
@@ -40,36 +44,54 @@ struct clView: View {
                     }
                         VStack{
                             ScrollView {
-                                ForEach(model.classes, id: \.self) {data in
+                              //  let modelSorted = model.classes.sorted{ $0.course_time_start.formatted(date: .omitted, time: .standard) < $1.course_time_start.formatted(date: .omitted, time: .standard) }
+                                
+                                // model.classes.sorted{ stringTime(item: $0.course_time_start) < stringTime(item: $1.course_time_start) }
+                                // sort by time if you can
+                                ForEach( model.classes, id: \.self) {data in
                                     if(data.course_days.contains(currentDay())){
-                                        Button(action: {}){
+                                        Button(action: {
+                                            confirmationShown = true
+                                        }){
                                             Image(systemName: "person.crop.circle")
                                                 .resizable()
                                                 .aspectRatio(contentMode: .fit)
                                                 .frame(width: 60)
-                                                .foregroundColor(.white)
+                                                .foregroundColor(Color("TextColor"))
                                             Divider().frame(width: 15, height: 70)
                                             //Spacer()
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text("\(data.course_name) - \(data.course_section)")
                                                     .bold()
                                                     .font(.system(size: 23))
-                                                    .foregroundColor(.white)
+                                                    .foregroundColor(Color("TextColor"))
                                                 Text(data.course_location)
                                                     .font(.subheadline)
-                                                    .foregroundColor(.white)
+                                                    .foregroundColor(Color("TextColor"))
                                                 Text("\(data.course_time_start) - \(data.course_time_end)")
                                                     .font(.subheadline)
-                                                    .foregroundColor(.white)
+                                                    .foregroundColor(Color("TextColor"))
                                                 Text("\(data.prof_name) - \(data.prof_email)")
                                                     .font(.subheadline)
-                                                    .foregroundColor(.white)
+                                                    .foregroundColor(Color("TextColor"))
                                             }
                                             Spacer()
                                         }
+                                        .confirmationDialog("Sign Into Class", isPresented: $confirmationShown) {
+                                            Button("NFC Scanner"){
+                                                //code for NFC
+                                            }
+                                            Button("Zoom"){
+                                                //code for Zoom Link on iPhone
+                                                attend.setAttendance(courseDoc: data.id!, dateDoc: date4Doc(), tempUser: gatherUserData() ) { String in
+                                                    print(String)
+                                                }
+                                            }
+                                        }
+                                        
                                         .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
                                         .padding()
-                                        .background(Color.blue)
+                                        .background(Color.accentColor)
                                         .cornerRadius(20)
                                     }
                                 }
@@ -139,6 +161,24 @@ struct clView: View {
             }
         }
     }
+    
+    func gatherUserData() -> [String?] {
+        let temp : [String?] = [Auth.auth().currentUser?.displayName, Auth.auth().currentUser?.email, "Zoom", currentTime()]
+        return temp
+    }
+    
+    func stringTime(item : String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm:ss a"
+        
+        
+        let temp : Date = dateFormatter.date(from: item)!
+        
+        
+        
+        dateFormatter.dateFormat = "HH:mm"
+        return dateFormatter.string(from: temp as Date)
+    }
 }
 
 struct BottomSheet : View {
@@ -162,33 +202,34 @@ struct BottomSheet : View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 60)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(Color("TextColor"))
                                 Divider().frame(width: 15, height: 70)
                                 //Spacer()
                                 VStack(alignment: .leading, spacing: 3){
                                     Text("\(data.course_name) - \(data.course_section)")
                                         .bold()
                                         .font(.system(size: 23))
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("TextColor"))
                                     Text(data.course_location)
                                         .font(.subheadline)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("TextColor"))
                                     Text("\(data.course_time_start) - \(data.course_time_end)")
                                         .font(.subheadline)
                                         .foregroundColor(.white)
                                     Text("\(data.prof_name) - \(data.prof_email)")
                                         .font(.subheadline)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("TextColor"))
                                 }
                                 Spacer()
                             }
                             .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.accentColor)
                             .opacity(0.7)
                             .cornerRadius(20)
                         }
                     }
+                    .disabled(true)
                 }
             }
         }
@@ -229,6 +270,20 @@ func currentDay() -> String{
     dateForm.dateFormat = "EEEE"
     let weekDay = dateForm.string(from: Date())
     return String(weekDay.prefix(3))
+}
+
+func date4Doc() -> String {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .none
+    return formatter.string(from: Date()).replacingOccurrences(of: "/", with: "-")
+}
+
+func currentTime() -> String {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .none
+    formatter.timeStyle = .short
+    return formatter.string(from: Date())
 }
 
 

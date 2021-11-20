@@ -60,10 +60,30 @@ class AccountInfoController: UIViewController {
         print("Signing Out")
         try! Auth.auth().signOut()
         //erase user data
-        self.performSegue(withIdentifier: "signOut", sender: self)
         appDelegate?.overrideUserInterfaceStyle = .unspecified
         userDefaults.set(AUTO_THEME, forKey: THEME_KEY)
         userDefaults.set("", forKey: ID_KEY)
+        
+        
+       // appDelegate?.window?.rootViewController?.performSegue(withIdentifier: "signOut", sender: self)
+        
+       // navigationController?.pushViewController(LaunchAnimationController, animated: true)
+        
+//        let launchPage = self.storyboard?.instantiateViewController(withIdentifier: "signOut")
+//        let appDelegate = UIApplication.shared.delegate
+//        appDelegate?.window.rootViewController = launchPage
+        
+//        let story = UIStoryboard(name: "Main", bundle:nil)
+//        let vc = story.instantiateViewController(withIdentifier: "signOut") as! LaunchAnimationController
+//        UIApplication.shared.windows.first?.rootViewController = vc
+//        UIApplication.shared.windows.first?.makeKeyAndVisible()
+        
+  //          view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+//
+        
+        //self.navigationController?.popToViewController(LaunchAnimationController(), animated: true)
+        
+        self.performSegue(withIdentifier: "signOut", sender: self)
         return
     }
     

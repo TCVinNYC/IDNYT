@@ -400,9 +400,12 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.99758130310000004" green="0.0" blue="0.29802599549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signOut:" destination="fXZ-e6-HS5" eventType="touchUpInside" id="iwD-T5-nM3"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="signOut" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rUO-tS-9Xq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -445,12 +448,11 @@
                         <outlet property="userEmail" destination="qib-gw-AJY" id="oLb-Hy-JNZ"/>
                         <outlet property="userID" destination="3Zz-1N-yyu" id="Met-wc-t5x"/>
                         <outlet property="userName" destination="a7o-9I-5aN" id="q5Z-2y-AML"/>
-                        <segue destination="Wao-aM-00P" kind="presentation" identifier="signOut" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="vK4-k1-ivc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Piu-GB-CO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3231.884057971015" y="293.97321428571428"/>
+            <point key="canvasLocation" x="3277" y="294"/>
         </scene>
         <!--Hosting Controller-->
         <scene sceneID="e8r-PI-DAb">
@@ -460,25 +462,10 @@
             </objects>
             <point key="canvasLocation" x="2374" y="1617"/>
         </scene>
-        <!--Class List-->
-        <scene sceneID="Lkd-pV-Bvc">
-            <objects>
-                <viewController id="MZj-6r-nkN" customClass="ClassListViewController" customModule="IDNYT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="N9n-Yv-eTT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="kR0-hL-xUg"/>
-                        <color key="backgroundColor" name="Background"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Class List" image="calendar.circle" catalog="system" id="t5C-Ug-7ch"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tZu-Mv-UsM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3917" y="294"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FjJ-vK-hS3"/>
+        <segue reference="jDy-W3-SjB"/>
+        <segue reference="rUO-tS-9Xq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="GoogleSignIn" width="382" height="92"/>
@@ -491,7 +478,7 @@
         <image name="heart.circle" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
-            <color red="1" green="0.91399997472763062" blue="0.27500000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

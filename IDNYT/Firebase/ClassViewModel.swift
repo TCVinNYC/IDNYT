@@ -13,10 +13,10 @@ import FirebaseAuth
 class ClassViewModel : ObservableObject{
     
     ///schittum@nyit.edu
-    let userEmail = Auth.auth().currentUser?.email
+    ///Auth.auth().currentUser?.email
+    let userEmail = "schittum@nyit.edu"
     
     @Published var classes = [ClassModel]()
-    
     
     private var db  = Firestore.firestore()
     

@@ -68,14 +68,26 @@ class ClassListViewController: UIViewController {
                     completion(type)
                 }
                 return
-            }else if let error = error{
-                print("Document does not exist")
-                print(error.localizedDescription)
+                
+            }else{
+                docRef.setData([
+                    "email" : Auth.auth().currentUser?.email!,
+                    "type" : "student"
+                ])
                 DispatchQueue.main.async{
-                    completion("error")
+                    completion("student")
                 }
                 return
             }
+                
+//            }else if let error = error{
+//                print("Document does not exist")
+//                print(error.localizedDescription)
+//                DispatchQueue.main.async{
+//                    completion("error")
+//                }
+//                return
+//            }
         }
     }
 }

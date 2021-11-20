@@ -20,8 +20,12 @@ class LaunchAnimationController: UIViewController {
         nyitIcon.alpha = 0
         animate()
         setTheme()
-        //uploadFile2FireStore()
         return
+    }
+    
+    func viewWillAppear(){
+        animate()
+        setTheme()
     }
     
     func uploadFile2FireStore(){
