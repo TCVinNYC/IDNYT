@@ -11,6 +11,8 @@
 		A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */; };
 		A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2E27379BE400B5CA0D /* clView.swift */; };
 		A314408C274778C700FB7F7C /* editClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* editClass.swift */; };
+		A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F384274C469300FCE3C2 /* HealthScreenView.swift */; };
+		A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F387274C4A0F00FCE3C2 /* HSViewController.swift */; };
 		A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3792269272E4504000C17B4 /* LaunchAnimationController.swift */; };
 		A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */; };
 		A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */; };
@@ -37,6 +39,8 @@
 		A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		A30E0F2E27379BE400B5CA0D /* clView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clView.swift; sourceTree = "<group>"; };
 		A314408B274778C700FB7F7C /* editClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editClass.swift; sourceTree = "<group>"; };
+		A345F384274C469300FCE3C2 /* HealthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScreenView.swift; sourceTree = "<group>"; };
+		A345F387274C4A0F00FCE3C2 /* HSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSViewController.swift; sourceTree = "<group>"; };
 		A3792269272E4504000C17B4 /* LaunchAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationController.swift; sourceTree = "<group>"; };
 		A3920BC1272E3BEF00B51F9C /* IDNYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDNYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +84,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A345F386274C49E000FCE3C2 /* Storyboard2UI */ = {
+			isa = PBXGroup;
+			children = (
+				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
+				A345F387274C4A0F00FCE3C2 /* HSViewController.swift */,
+			);
+			path = Storyboard2UI;
+			sourceTree = "<group>";
+		};
 		A3920BB8272E3BEF00B51F9C = {
 			isa = PBXGroup;
 			children = (
@@ -120,12 +133,13 @@
 		A3B71DDC2730A81F008FB7F9 /* MainViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A345F386274C49E000FCE3C2 /* Storyboard2UI */,
 				A3D9800D27470B74001CFA79 /* ProfessorView */,
 				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
 				A3EA33A227321BF0007FA93C /* DigitalCardController.swift */,
-				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
 				A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */,
+				A345F384274C469300FCE3C2 /* HealthScreenView.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -282,6 +296,7 @@
 				A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */,
 				A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */,
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
+				A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */,
 				A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */,
 				A314408C274778C700FB7F7C /* editClass.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
@@ -293,6 +308,7 @@
 				A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */,
 				A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */,
 				A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */,
+				A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
