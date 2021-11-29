@@ -8,10 +8,14 @@
 import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
+import CoreNFC
+
+enum ActiveAlert {
+    case success, fail
+}
 
 struct clView: View {
     //Gesture Data
-    
     @State var offset: CGFloat = 0
     @State var lastOffset: CGFloat = 0
     @GestureState var gestureOffset : CGFloat = 0
@@ -21,8 +25,15 @@ struct clView: View {
     
     @State private var isLoading = true
     @State private var confirmationShown = false
+    @State private var result : String = ""
     
+    var nfc = NFCReader()
+    @State var tempCourseLoc : String = ""
+    @State var tempCourseID : String = ""
     
+    @State private var signInAlert : Bool = false
+    @State private var activeAlert: ActiveAlert = .success
+
     var body: some View {
         NavigationView{
             ZStack(alignment: .leading){
@@ -33,7 +44,6 @@ struct clView: View {
                         .scaleEffect(1.5)
                         .padding(.bottom, 50)
                     } else {
-                        
                     HStack{
                         Label("Today:", systemImage: "calendar.circle")
                             .imageScale(Image.Scale.large)
@@ -42,16 +52,26 @@ struct clView: View {
                             .padding(.leading, 33)
                         Spacer()
                     }
+
                         VStack{
                             ScrollView {
-                              //  let modelSorted = model.classes.sorted{ $0.course_time_start.formatted(date: .omitted, time: .standard) < $1.course_time_start.formatted(date: .omitted, time: .standard) }
-                                
-                                // model.classes.sorted{ stringTime(item: $0.course_time_start) < stringTime(item: $1.course_time_start) }
                                 // sort by time if you can
-                                ForEach( model.classes, id: \.self) {data in
+                                ForEach( model.classes, id:  \.id) { data in
                                     if(data.course_days.contains(currentDay())){
                                         Button(action: {
-                                            confirmationShown = true
+                                            tempCourseLoc = data.course_location
+                                            tempCourseID = data.id!
+                                            
+                                            attend.haveSignedIn(courseDoc: tempCourseID, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){ String in
+                                                if(String == "true"){
+                                                    confirmationShown = false
+                                                    print("cannot sign in anymore")
+                                                }else{
+                                                    confirmationShown = true
+                                                    print("can sign in for now")
+                                                }
+                                            }
+                                            
                                         }){
                                             Image(systemName: "person.crop.circle")
                                                 .resizable()
@@ -59,7 +79,6 @@ struct clView: View {
                                                 .frame(width: 60)
                                                 .foregroundColor(Color("TextColor"))
                                             Divider().frame(width: 15, height: 70)
-                                            //Spacer()
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text("\(data.course_name) - \(data.course_section)")
                                                     .bold()
@@ -79,16 +98,44 @@ struct clView: View {
                                         }
                                         .confirmationDialog("Sign Into Class", isPresented: $confirmationShown) {
                                             Button("NFC Scanner"){
-                                                //code for NFC
-                                            }
+                                                let result = nfc.beginScanning(location: tempCourseLoc)
+                                                print("NFC Read: \(result)")
+                                                
+                                                if(result.contains(tempCourseLoc)){
+                                                    self.activeAlert = .success
+                                                    print("Right Class")
+                                                    attend.setAttendance(courseDoc: tempCourseID, dateDoc: date4Doc(), tempUser: gatherUserData(loginType: "NFC") ) { String in
+                                                        print(String)
+                                                    }
+                                                }else{
+                                                    self.activeAlert = .fail
+                                                    print("Wrong Class")
+                                                }
+                                            
+                                                self.signInAlert = true
+                                        }
                                             Button("Zoom"){
+                                                self.activeAlert = .success
                                                 //code for Zoom Link on iPhone
-                                                attend.setAttendance(courseDoc: data.id!, dateDoc: date4Doc(), tempUser: gatherUserData() ) { String in
+                                                attend.setAttendance(courseDoc: tempCourseID, dateDoc: date4Doc(), tempUser: gatherUserData(loginType: "Zoom") ) { String in
                                                     print(String)
                                                 }
                                             }
-                                        }
-                                        
+                                       }
+                                        .alert(isPresented: $signInAlert) {
+                                            switch activeAlert {
+                                            case .success:
+                                                return Alert(
+                                                    title: Text("Successfully Signed In!"),
+                                                    message: Text("Go ahead and enter class :)")
+                                                )
+                                            case .fail:
+                                                return Alert(
+                                                    title: Text("Wrong Class Room!"),
+                                                    message: Text("Try Again Please")
+                                                )
+                                            }
+                                       }
                                         .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
                                         .padding()
                                         .background(Color.accentColor)
@@ -98,7 +145,6 @@ struct clView: View {
                             }
                         }
                         .shadow(radius: 4)
-
                     }
                 }
                 .frame(maxWidth: UIScreen.main.bounds.size.width)
@@ -137,11 +183,12 @@ struct clView: View {
                 }
                 .onAppear{
                     downloadCoursesCall()
-                    
-                }
+             //       let modelSorted = model.classes.sorted{ $0.course_time_start.formatted(date: .omitted, time: .standard) < $1.course_time_start.formatted(date: .omitted, time: .standard) }
+
+                   // model.classes.sorted{ stringTime(item: $0.course_time_start) < stringTime(item: $1.course_time_start) }
                 }
             }
-    
+        }
     }
     func onChange(){
         DispatchQueue.main.async {
@@ -162,8 +209,8 @@ struct clView: View {
         }
     }
     
-    func gatherUserData() -> [String?] {
-        let temp : [String?] = [Auth.auth().currentUser?.displayName, Auth.auth().currentUser?.email, "Zoom", currentTime()]
+    func gatherUserData(loginType:String) -> [String?] {
+        let temp : [String?] = [Auth.auth().currentUser?.displayName, Auth.auth().currentUser?.email, loginType, currentTime()]
         return temp
     }
     
@@ -318,3 +365,7 @@ func currentTime() -> String {
 //                                }
 //                            }
 //                        }))
+
+
+
+

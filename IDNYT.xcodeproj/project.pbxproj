@@ -13,6 +13,7 @@
 		A314408C274778C700FB7F7C /* editClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* editClass.swift */; };
 		A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F384274C469300FCE3C2 /* HealthScreenView.swift */; };
 		A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F387274C4A0F00FCE3C2 /* HSViewController.swift */; };
+		A3721DC2275428B200A4BCEC /* NFCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3721DC1275428B200A4BCEC /* NFCController.swift */; };
 		A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3792269272E4504000C17B4 /* LaunchAnimationController.swift */; };
 		A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */; };
 		A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 		A3D9800F27470B8A001CFA79 /* AttendenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */; };
 		A3D9801127470BA5001CFA79 /* AttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801027470BA5001CFA79 /* AttendanceModel.swift */; };
 		A3D9801327470CC4001CFA79 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */; };
+		A3E501CF275153DB00FCCB56 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E501CE275153DB00FCCB56 /* NFCReader.swift */; };
 		A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA33A227321BF0007FA93C /* DigitalCardController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,7 @@
 		A314408B274778C700FB7F7C /* editClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editClass.swift; sourceTree = "<group>"; };
 		A345F384274C469300FCE3C2 /* HealthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScreenView.swift; sourceTree = "<group>"; };
 		A345F387274C4A0F00FCE3C2 /* HSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSViewController.swift; sourceTree = "<group>"; };
+		A3721DC1275428B200A4BCEC /* NFCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCController.swift; sourceTree = "<group>"; };
 		A3792269272E4504000C17B4 /* LaunchAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAnimationController.swift; sourceTree = "<group>"; };
 		A3920BC1272E3BEF00B51F9C /* IDNYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDNYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 		A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceViewController.swift; sourceTree = "<group>"; };
 		A3D9801027470BA5001CFA79 /* AttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceModel.swift; sourceTree = "<group>"; };
 		A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
+		A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IDNYT.entitlements; sourceTree = "<group>"; };
+		A3E501CE275153DB00FCCB56 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		A3EA33A227321BF0007FA93C /* DigitalCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardController.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +119,7 @@
 		A3920BC3272E3BEF00B51F9C /* IDNYT */ = {
 			isa = PBXGroup;
 			children = (
+				A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */,
 				A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */,
 				A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */,
 				A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */,
@@ -151,6 +157,8 @@
 				A3C9729B273E00060077DCB9 /* ClassModel.swift */,
 				A3D9801027470BA5001CFA79 /* AttendanceModel.swift */,
 				A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */,
+				A3E501CE275153DB00FCCB56 /* NFCReader.swift */,
+				A3721DC1275428B200A4BCEC /* NFCController.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -308,7 +316,9 @@
 				A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */,
 				A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */,
 				A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */,
+				A3721DC2275428B200A4BCEC /* NFCController.swift in Sources */,
 				A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */,
+				A3E501CF275153DB00FCCB56 /* NFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TNHS6765PZ;
@@ -488,6 +499,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TNHS6765PZ;

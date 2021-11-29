@@ -39,8 +39,28 @@ class AttendanceViewModel : ObservableObject {
             self.attendance = (data.map({ doc in
                 AttendanceModel(student_details: doc.value as! [String])
             }))
-                completion("done")
+            return completion("done")
         }
+    }
+    
+    //change to .cache later, keep default for testing reasons
+    func haveSignedIn(courseDoc:String, dateDoc:String, studentEmail: String, completion: @escaping ((String) -> Void)){
+        db.collection("courses").document(courseDoc).collection("attendance").document(dateDoc).getDocument(source: .default) { (document, error) in
+            if let document = document {
+              let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("checking descrip")
+                print(dataDescription)
+                if(dataDescription.contains(studentEmail)){
+                    print("you exist")
+                    return completion ("true")
+                }
+                return completion ("false")
+             // print("Cached document data: \(dataDescription)")
+            } else {
+              print("Document does not exist in cache")
+                return completion ("false")
+            }
+          }
     }
     
     func setAttendance(courseDoc:String, dateDoc:String, tempUser : [String?] ,completion: @escaping ((String)-> Void)) {
@@ -56,5 +76,8 @@ class AttendanceViewModel : ObservableObject {
         }
     }
     
+//    func getAllDates(courseDoc:String, completion: @escaping (([String]) -> [String])){
+//
+//    }
     
 }
