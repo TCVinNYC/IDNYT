@@ -44,12 +44,11 @@ class AttendanceViewModel : ObservableObject {
     }
     
     //change to .cache later, keep default for testing reasons
-    func haveSignedIn(courseDoc:String, dateDoc:String, studentEmail: String, completion: @escaping ((String) -> Void)){
+    func studentSignIn(courseDoc:String, dateDoc:String, studentEmail: String, completion: @escaping ((String) -> Void)){
         db.collection("courses").document(courseDoc).collection("attendance").document(dateDoc).getDocument(source: .default) { (document, error) in
             if let document = document {
               let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
                 print("checking descrip")
-                print(dataDescription)
                 if(dataDescription.contains(studentEmail)){
                     print("you exist")
                     return completion ("true")

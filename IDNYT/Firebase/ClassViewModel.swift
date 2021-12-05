@@ -46,6 +46,9 @@ class ClassViewModel : ObservableObject{
         }
     }
     
+
+    
+    
     func getStudentCourses(completion: @escaping ((String) -> Void)){
         db.collection("courses").whereField("student_list", arrayContains: "schittum@nyit.edu").addSnapshotListener {(querySnapshot, err) in
             if let err = err {

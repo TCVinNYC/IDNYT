@@ -22,6 +22,9 @@ struct clView: View {
     
     @ObservedObject var model = ClassViewModel()
     var attend = AttendanceViewModel()
+//    @State var color : Color = .accentColor
+    
+    @State var signInCourse : [String] = []
     
     @State private var isLoading = true
     @State private var confirmationShown = false
@@ -34,6 +37,7 @@ struct clView: View {
     @State private var signInAlert : Bool = false
     @State private var activeAlert: ActiveAlert = .success
 
+    
     var body: some View {
         NavigationView{
             ZStack(alignment: .leading){
@@ -56,21 +60,28 @@ struct clView: View {
                         VStack{
                             ScrollView {
                                 // sort by time if you can
-                                ForEach( model.classes, id:  \.id) { data in
+                               // for var data in model.classes {
+                                
+                                ForEach(model.classes, id:  \.id) { data in
                                     if(data.course_days.contains(currentDay())){
                                         Button(action: {
-                                            tempCourseLoc = data.course_location
-                                            tempCourseID = data.id!
                                             
-                                            attend.haveSignedIn(courseDoc: tempCourseID, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){ String in
-                                                if(String == "true"){
-                                                    confirmationShown = false
-                                                    print("cannot sign in anymore")
-                                                }else{
-                                                    confirmationShown = true
-                                                    print("can sign in for now")
-                                                }
+                                            tempCourseID = data.id!
+                                            if(!signInCourse.contains(tempCourseID)){
+                                                tempCourseLoc = data.course_location
+                                                confirmationShown = true
                                             }
+                                                   
+//                                            attend.studentSignIn(courseDoc: tempCourseID, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){ String in
+//                                                if(String == "true"){
+//                                                 //   color = .green
+//                                                    confirmationShown = false
+//                                                    print("cannot sign in anymore")
+//                                                }else{
+//                                                    confirmationShown = true
+//                                                    print("can sign in for now")
+//                                                }
+//                                            }
                                             
                                         }){
                                             Image(systemName: "person.crop.circle")
@@ -94,8 +105,17 @@ struct clView: View {
                                                     .font(.subheadline)
                                                     .foregroundColor(Color("TextColor"))
                                             }
+
                                             Spacer()
+
                                         }
+                                        
+                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
+                                        .padding()
+                                        .background(Color.accentColor)
+                                        .cornerRadius(20)
+                                        .disabled(signInCourse.contains(data.id!))
+                                        
                                         .confirmationDialog("Sign Into Class", isPresented: $confirmationShown) {
                                             Button("NFC Scanner"){
                                                 let result = nfc.beginScanning(location: tempCourseLoc)
@@ -107,11 +127,14 @@ struct clView: View {
                                                     attend.setAttendance(courseDoc: tempCourseID, dateDoc: date4Doc(), tempUser: gatherUserData(loginType: "NFC") ) { String in
                                                         print(String)
                                                     }
+                                                    signInCourse.append(tempCourseID)
+                                                        
+                                                    
+                                              //      setSignIn(doc_ID: tempCourseID, signInResult: "green")
                                                 }else{
                                                     self.activeAlert = .fail
                                                     print("Wrong Class")
                                                 }
-                                            
                                                 self.signInAlert = true
                                         }
                                             Button("Zoom"){
@@ -120,6 +143,7 @@ struct clView: View {
                                                 attend.setAttendance(courseDoc: tempCourseID, dateDoc: date4Doc(), tempUser: gatherUserData(loginType: "Zoom") ) { String in
                                                     print(String)
                                                 }
+                                                signInCourse.append(tempCourseID)
                                             }
                                        }
                                         .alert(isPresented: $signInAlert) {
@@ -136,10 +160,9 @@ struct clView: View {
                                                 )
                                             }
                                        }
-                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
-                                        .padding()
-                                        .background(Color.accentColor)
-                                        .cornerRadius(20)
+
+                                        
+                                        
                                     }
                                 }
                             }
@@ -183,6 +206,8 @@ struct clView: View {
                 }
                 .onAppear{
                     downloadCoursesCall()
+                    
+                    
              //       let modelSorted = model.classes.sorted{ $0.course_time_start.formatted(date: .omitted, time: .standard) < $1.course_time_start.formatted(date: .omitted, time: .standard) }
 
                    // model.classes.sorted{ stringTime(item: $0.course_time_start) < stringTime(item: $1.course_time_start) }
@@ -202,6 +227,14 @@ struct clView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 model.getStudentCourses() { String in
                     if String == "done"{
+                        
+                        for course in model.classes{
+                            attend.studentSignIn(courseDoc: course.id!, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){String in
+                                if(String == "true"){
+                                    signInCourse.append(course.id!)
+                                }
+                            }
+                        }
                         isLoading = false
                     }
                 }
@@ -225,6 +258,17 @@ struct clView: View {
         
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: temp as Date)
+    }
+    
+    func setSignIn(doc_ID : String) -> Color{
+        var tempColor : Color = .accentColor
+        attend.studentSignIn(courseDoc: doc_ID, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){String in
+            if(String == "true"){
+                signInCourse.append(doc_ID)
+                tempColor = .green
+            }
+        }
+        return tempColor
     }
 }
 
