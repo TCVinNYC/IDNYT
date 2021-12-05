@@ -22,7 +22,6 @@
 		A3920BCE272E3BF000B51F9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3920BCD272E3BF000B51F9C /* Assets.xcassets */; };
 		A3920BD1272E3BF000B51F9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3920BCF272E3BF000B51F9C /* LaunchScreen.storyboard */; };
 		A3920BD9272E3C3300B51F9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */; };
-		A39D8E9B273F21E200AC6E1F /* Fall2021ProfList.txt in Resources */ = {isa = PBXBuildFile; fileRef = A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */; };
 		A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */; };
 		A3C061152739FC0D000317B1 /* PCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C061142739FC0D000317B1 /* PCLView.swift */; };
 		A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */; };
@@ -54,7 +53,6 @@
 		A3920BD0272E3BF000B51F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3920BD2272E3BF000B51F9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fall2021ProfList.txt; sourceTree = "<group>"; };
 		A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */,
-				A39D8E9A273F21E200AC6E1F /* Fall2021ProfList.txt */,
 				A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */,
 				A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */,
 				A3920BCF272E3BF000B51F9C /* LaunchScreen.storyboard */,
@@ -242,7 +239,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A39D8E9B273F21E200AC6E1F /* Fall2021ProfList.txt in Resources */,
 				A3920BD1272E3BF000B51F9C /* LaunchScreen.storyboard in Resources */,
 				A3920BD9272E3C3300B51F9C /* GoogleService-Info.plist in Resources */,
 				A3920BCE272E3BF000B51F9C /* Assets.xcassets in Resources */,
@@ -469,7 +465,7 @@
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TNHS6765PZ;
+				DEVELOPMENT_TEAM = 4V49B9D7W8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
@@ -502,7 +498,7 @@
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TNHS6765PZ;
+				DEVELOPMENT_TEAM = 4V49B9D7W8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
