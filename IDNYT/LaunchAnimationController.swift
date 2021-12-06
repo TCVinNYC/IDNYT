@@ -57,9 +57,6 @@ class LaunchAnimationController: UIViewController {
         
         UIView.animate(withDuration: 0.5){
             self.nyitIcon.alpha = 1
-           //self.nyitIcon.frame = CGRect(x: 0, y: 0, width: self.view.frame.width+25, height: self.view.frame.height+25)
-            //print("big")
-            
             self.nyitIcon.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             print("normal")
             

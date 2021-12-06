@@ -33,6 +33,8 @@ struct clView: View {
     var nfc = NFCReader()
     @State var tempCourseLoc : String = ""
     @State var tempCourseID : String = ""
+    @State var tempZoomLink : String = ""
+    @Environment(\.openURL) var openURL
     
     @State private var signInAlert : Bool = false
     @State private var activeAlert: ActiveAlert = .success
@@ -64,25 +66,13 @@ struct clView: View {
                                 
                                 ForEach(model.classes, id:  \.id) { data in
                                     if(data.course_days.contains(currentDay())){
-                                        Button(action: {
-                                            
+                                        Button(action: {                      
                                             tempCourseID = data.id!
                                             if(!signInCourse.contains(tempCourseID)){
                                                 tempCourseLoc = data.course_location
+                                                tempZoomLink = data.course_zoomLink
                                                 confirmationShown = true
                                             }
-                                                   
-//                                            attend.studentSignIn(courseDoc: tempCourseID, dateDoc: date4Doc(), studentEmail: (Auth.auth().currentUser?.email)!){ String in
-//                                                if(String == "true"){
-//                                                 //   color = .green
-//                                                    confirmationShown = false
-//                                                    print("cannot sign in anymore")
-//                                                }else{
-//                                                    confirmationShown = true
-//                                                    print("can sign in for now")
-//                                                }
-//                                            }
-                                            
                                         }){
                                             Image(systemName: "person.crop.circle")
                                                 .resizable()
@@ -139,11 +129,11 @@ struct clView: View {
                                         }
                                             Button("Zoom"){
                                                 self.activeAlert = .success
-                                                //code for Zoom Link on iPhone
                                                 attend.setAttendance(courseDoc: tempCourseID, dateDoc: date4Doc(), tempUser: gatherUserData(loginType: "Zoom") ) { String in
                                                     print(String)
                                                 }
                                                 signInCourse.append(tempCourseID)
+                                                openURL(URL(string: tempZoomLink)!)
                                             }
                                        }
                                         .alert(isPresented: $signInAlert) {

@@ -10,7 +10,8 @@
 		88B7B0E1AB7BB16B5361D7BA /* Pods_IDNYT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */; };
 		A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */; };
 		A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2E27379BE400B5CA0D /* clView.swift */; };
-		A314408C274778C700FB7F7C /* editClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* editClass.swift */; };
+		A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* EditClassDetails.swift */; };
+		A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3258FAD275D5D2900688533 /* ClassDetailsView.swift */; };
 		A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F384274C469300FCE3C2 /* HealthScreenView.swift */; };
 		A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F387274C4A0F00FCE3C2 /* HSViewController.swift */; };
 		A3721DC2275428B200A4BCEC /* NFCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3721DC1275428B200A4BCEC /* NFCController.swift */; };
@@ -39,7 +40,8 @@
 		6397A18D900535AC59B0288F /* Pods-IDNYT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDNYT.release.xcconfig"; path = "Target Support Files/Pods-IDNYT/Pods-IDNYT.release.xcconfig"; sourceTree = "<group>"; };
 		A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		A30E0F2E27379BE400B5CA0D /* clView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clView.swift; sourceTree = "<group>"; };
-		A314408B274778C700FB7F7C /* editClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editClass.swift; sourceTree = "<group>"; };
+		A314408B274778C700FB7F7C /* EditClassDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClassDetails.swift; sourceTree = "<group>"; };
+		A3258FAD275D5D2900688533 /* ClassDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsView.swift; sourceTree = "<group>"; };
 		A345F384274C469300FCE3C2 /* HealthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScreenView.swift; sourceTree = "<group>"; };
 		A345F387274C4A0F00FCE3C2 /* HSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSViewController.swift; sourceTree = "<group>"; };
 		A3721DC1275428B200A4BCEC /* NFCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCController.swift; sourceTree = "<group>"; };
@@ -165,7 +167,8 @@
 			children = (
 				A3C061142739FC0D000317B1 /* PCLView.swift */,
 				A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */,
-				A314408B274778C700FB7F7C /* editClass.swift */,
+				A314408B274778C700FB7F7C /* EditClassDetails.swift */,
+				A3258FAD275D5D2900688533 /* ClassDetailsView.swift */,
 			);
 			path = ProfessorView;
 			sourceTree = "<group>";
@@ -302,8 +305,9 @@
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
 				A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */,
 				A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */,
-				A314408C274778C700FB7F7C /* editClass.swift in Sources */,
+				A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
+				A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */,
 				A3D9801327470CC4001CFA79 /* AttendanceViewModel.swift in Sources */,
 				A3920BC5272E3BEF00B51F9C /* AppDelegate.swift in Sources */,
 				A3D9801127470BA5001CFA79 /* AttendanceModel.swift in Sources */,
@@ -465,7 +469,7 @@
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4V49B9D7W8;
+				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
@@ -498,7 +502,7 @@
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4V49B9D7W8;
+				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";

@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 print("user signed in")
-                print(user?.profile?.email)
+                print(user?.profile?.email ?? "no email")
 
                 if((user?.profile?.email.hasSuffix("@nyit.edu")) == true){
                     self.performSegue(withIdentifier: "mainView", sender: self)

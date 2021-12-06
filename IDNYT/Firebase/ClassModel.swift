@@ -9,7 +9,6 @@ import Foundation
 import FirebaseFirestoreSwift
 
 struct ClassModel : Identifiable, Codable, Hashable{
-   // var localDidSignIn : String = "default"
     
     @DocumentID var id : String? = UUID().uuidString
     //var prof_image : Image
@@ -18,7 +17,7 @@ struct ClassModel : Identifiable, Codable, Hashable{
     var course_name : String
     var course_section : String
     var course_location : String
-    //var course_locZoom : String
+    var course_zoomLink : String
     var course_time_start : String
     var course_time_end : String
     var course_days : [String]

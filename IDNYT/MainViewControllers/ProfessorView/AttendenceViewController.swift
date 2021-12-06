@@ -67,7 +67,7 @@ struct AttendenceViewController: View {
                                 .foregroundColor(.blue)
                     }
                     
-                    NavigationLink(destination: editClass(currentCourse: currentCourse)){
+                    NavigationLink(destination: EditClassDetails(currentCourse: currentCourse)){
                                 Image(systemName: "pencil.circle.fill")
                                     .foregroundColor(.red)
                             Text("Edit")

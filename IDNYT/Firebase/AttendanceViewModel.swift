@@ -12,21 +12,15 @@ import FirebaseAuth
 
 class AttendanceViewModel : ObservableObject {
     
+    let userEmail = Auth.auth().currentUser?.email
+    let userName = Auth.auth().currentUser?.displayName
+    
     @Published var attendance = [AttendanceModel]()
     
     private var db  = Firestore.firestore()
-
-    //private var tempUser = AttendanceModel.init(student_details: ["Stevenson Chittumuri", "schittum@nyit.edu", "Zoom", "9:53 PM"])
-    
-    //private var tempArr = ["Stevenson Chittumuri", "schittum@nyit.edu", "Zoom", "9:53 PM"]
-    
-    //db.collection("courses").document("4WnqLykBVkR4njzrUtG2").collection("attendance").document("11-18-2021"
-    // document(courseDoc).collection("attendance").document(dateDoc)
-    // courseDoc:String, dateDoc:String,
     
     func getStudentDetails(courseDoc:String, dateDoc:String, completion: @escaping ((String) -> Void)){
         db.collection("courses").document(courseDoc).collection("attendance").document(dateDoc).addSnapshotListener {(querySnapshot, err) in
-            //guard let documents = querySnapshot?.document else{
             guard let document = querySnapshot else {
                 print("no docs")
                return completion("no docs")
@@ -54,7 +48,6 @@ class AttendanceViewModel : ObservableObject {
                     return completion ("true")
                 }
                 return completion ("false")
-             // print("Cached document data: \(dataDescription)")
             } else {
               print("Document does not exist in cache")
                 return completion ("false")
@@ -64,7 +57,7 @@ class AttendanceViewModel : ObservableObject {
     
     func setAttendance(courseDoc:String, dateDoc:String, tempUser : [String?] ,completion: @escaping ((String)-> Void)) {
         db.collection("courses").document(courseDoc).collection("attendance").document(dateDoc).setData([
-            tempUser[1]! as String : FieldValue.arrayUnion(tempUser)
+            tempUser[1]! as String : FieldValue.arrayUnion(tempUser as [Any])
         ], merge: true){
             err in
             if let err = err {
@@ -74,9 +67,4 @@ class AttendanceViewModel : ObservableObject {
             }
         }
     }
-    
-//    func getAllDates(courseDoc:String, completion: @escaping (([String]) -> [String])){
-//
-//    }
-    
 }
