@@ -9,9 +9,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
-pod 'FirebaseFirestoreSwift', '8.9.0-beta'
+pod 'FirebaseFirestoreSwift', '= 8.9.0-beta'
 pod 'GoogleSignIn'
-pod 'WeScan'
-pod 'ImageSlideshow'
+pod 'WeScan', '>= 0.9'
 
 end

@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		88B7B0E1AB7BB16B5361D7BA /* Pods_IDNYT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */; };
+		A308D32E275DB0EF00D5889B /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A308D32D275DB0EF00D5889B /* ScannerView.swift */; };
 		A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */; };
 		A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2E27379BE400B5CA0D /* clView.swift */; };
 		A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* EditClassDetails.swift */; };
 		A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3258FAD275D5D2900688533 /* ClassDetailsView.swift */; };
+		A3258FB2275D9B2800688533 /* DigitalCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */; };
 		A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F384274C469300FCE3C2 /* HealthScreenView.swift */; };
 		A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F387274C4A0F00FCE3C2 /* HSViewController.swift */; };
 		A3721DC2275428B200A4BCEC /* NFCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3721DC1275428B200A4BCEC /* NFCController.swift */; };
@@ -27,21 +29,22 @@
 		A3C061152739FC0D000317B1 /* PCLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C061142739FC0D000317B1 /* PCLView.swift */; };
 		A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */; };
 		A3C9729C273E00060077DCB9 /* ClassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9729B273E00060077DCB9 /* ClassModel.swift */; };
-		A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */; };
+		A3D9800C2745BD8D001CFA79 /* DigitalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */; };
 		A3D9800F27470B8A001CFA79 /* AttendenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */; };
 		A3D9801127470BA5001CFA79 /* AttendanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801027470BA5001CFA79 /* AttendanceModel.swift */; };
 		A3D9801327470CC4001CFA79 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */; };
 		A3E501CF275153DB00FCCB56 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E501CE275153DB00FCCB56 /* NFCReader.swift */; };
-		A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EA33A227321BF0007FA93C /* DigitalCardController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		57E9E27793B478C877F4E676 /* Pods-IDNYT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDNYT.debug.xcconfig"; path = "Target Support Files/Pods-IDNYT/Pods-IDNYT.debug.xcconfig"; sourceTree = "<group>"; };
 		6397A18D900535AC59B0288F /* Pods-IDNYT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDNYT.release.xcconfig"; path = "Target Support Files/Pods-IDNYT/Pods-IDNYT.release.xcconfig"; sourceTree = "<group>"; };
+		A308D32D275DB0EF00D5889B /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		A30E0F2E27379BE400B5CA0D /* clView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clView.swift; sourceTree = "<group>"; };
 		A314408B274778C700FB7F7C /* EditClassDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClassDetails.swift; sourceTree = "<group>"; };
 		A3258FAD275D5D2900688533 /* ClassDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsView.swift; sourceTree = "<group>"; };
+		A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardViewController.swift; sourceTree = "<group>"; };
 		A345F384274C469300FCE3C2 /* HealthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScreenView.swift; sourceTree = "<group>"; };
 		A345F387274C4A0F00FCE3C2 /* HSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSViewController.swift; sourceTree = "<group>"; };
 		A3721DC1275428B200A4BCEC /* NFCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCController.swift; sourceTree = "<group>"; };
@@ -59,13 +62,12 @@
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
 		A3C9729B273E00060077DCB9 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
-		A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListUIViewController.swift; sourceTree = "<group>"; };
+		A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardView.swift; sourceTree = "<group>"; };
 		A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceViewController.swift; sourceTree = "<group>"; };
 		A3D9801027470BA5001CFA79 /* AttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceModel.swift; sourceTree = "<group>"; };
 		A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 		A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IDNYT.entitlements; sourceTree = "<group>"; };
 		A3E501CE275153DB00FCCB56 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
-		A3EA33A227321BF0007FA93C /* DigitalCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardController.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
 				A345F387274C4A0F00FCE3C2 /* HSViewController.swift */,
+				A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */,
 			);
 			path = Storyboard2UI;
 			sourceTree = "<group>";
@@ -141,10 +144,10 @@
 				A345F386274C49E000FCE3C2 /* Storyboard2UI */,
 				A3D9800D27470B74001CFA79 /* ProfessorView */,
 				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
-				A3EA33A227321BF0007FA93C /* DigitalCardController.swift */,
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
-				A3D9800B2745BD8D001CFA79 /* ClassListUIViewController.swift */,
+				A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */,
 				A345F384274C469300FCE3C2 /* HealthScreenView.swift */,
+				A308D32D275DB0EF00D5889B /* ScannerView.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -299,12 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D9800F27470B8A001CFA79 /* AttendenceViewController.swift in Sources */,
+				A3258FB2275D9B2800688533 /* DigitalCardViewController.swift in Sources */,
 				A3920BC9272E3BEF00B51F9C /* LoginViewController.swift in Sources */,
 				A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */,
 				A3C9729A273DFECB0077DCB9 /* ClassViewModel.swift in Sources */,
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
 				A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */,
-				A3D9800C2745BD8D001CFA79 /* ClassListUIViewController.swift in Sources */,
+				A3D9800C2745BD8D001CFA79 /* DigitalCardView.swift in Sources */,
 				A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
 				A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */,
@@ -315,9 +319,9 @@
 				A3920BC7272E3BEF00B51F9C /* SceneDelegate.swift in Sources */,
 				A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */,
 				A3B71DDE2730A839008FB7F9 /* AccountInfoController.swift in Sources */,
-				A3EA33A327321BF0007FA93C /* DigitalCardController.swift in Sources */,
 				A3721DC2275428B200A4BCEC /* NFCController.swift in Sources */,
 				A345F388274C4A0F00FCE3C2 /* HSViewController.swift in Sources */,
+				A308D32E275DB0EF00D5889B /* ScannerView.swift in Sources */,
 				A3E501CF275153DB00FCCB56 /* NFCReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,12 +470,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = IDNYT;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "IDNYT will use NFC to sign you in for attendance";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -499,12 +506,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = IDNYT/IDNYT.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TNHS6765PZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IDNYT/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = IDNYT;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "IDNYT will use NFC to sign you in for attendance";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow IDNYT to access your camera to scan your documents.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

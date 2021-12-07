@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -177,84 +178,14 @@
         <!--Digital Card-->
         <scene sceneID="flr-Wc-DWo">
             <objects>
-                <viewController id="5xY-g8-J7p" customClass="DigitalCardController" customModule="IDNYT" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bXv-ia-GwJ">
+                <viewController id="5xY-g8-J7p" customClass="DigitalCardViewController" customModule="IDNYT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Alu-fb-zyH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Digital Wallet" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-w7-LtY">
-                                <rect key="frame" x="25" y="119" width="277.5" height="50.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" name="AccentColor"/>
-                                <size key="shadowOffset" width="-1" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="6kT-vV-dES">
-                                <rect key="frame" x="25" y="218" width="112.5" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="NYIT Card:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wOq-6E-75V">
-                                <rect key="frame" x="25" y="494" width="141" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Vaccine Card:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNf-dB-Zr3" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="40" y="255.5" width="335" height="232.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edj-gV-WYg" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                <rect key="frame" x="40" y="531" width="335" height="232.5"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="i6B-fZ-G0q"/>
-                        <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="77v-zh-mha"/>
-                            <constraint firstItem="jFJ-w7-LtY" firstAttribute="top" secondItem="i6B-fZ-G0q" secondAttribute="top" constant="75" id="8l0-cP-tA4"/>
-                            <constraint firstItem="6kT-vV-dES" firstAttribute="top" secondItem="jFJ-w7-LtY" secondAttribute="bottom" constant="48.5" id="B71-lf-ElC"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="bottom" secondItem="wOq-6E-75V" secondAttribute="bottom" constant="290" id="EWK-5K-jkZ"/>
-                            <constraint firstItem="Edj-gV-WYg" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="40" id="I5Y-tZ-ErK"/>
-                            <constraint firstItem="oNf-dB-Zr3" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="40" id="JGv-bm-Xyd"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="6kT-vV-dES" secondAttribute="trailing" constant="276.5" id="JlW-rV-17x"/>
-                            <constraint firstItem="oNf-dB-Zr3" firstAttribute="top" secondItem="6kT-vV-dES" secondAttribute="bottom" constant="8.5" id="KRZ-3T-nVw"/>
-                            <constraint firstItem="Edj-gV-WYg" firstAttribute="top" secondItem="wOq-6E-75V" secondAttribute="bottom" constant="8" symbolic="YES" id="XWf-5m-x0p"/>
-                            <constraint firstItem="wOq-6E-75V" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="dOk-CO-5KE"/>
-                            <constraint firstItem="6kT-vV-dES" firstAttribute="leading" secondItem="i6B-fZ-G0q" secondAttribute="leading" constant="25" id="eXH-lc-aye"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="wOq-6E-75V" secondAttribute="trailing" constant="248" id="l0h-ck-Z7P"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="bottom" secondItem="Edj-gV-WYg" secondAttribute="bottom" constant="49.5" id="mTB-Vj-E1b"/>
-                            <constraint firstItem="wOq-6E-75V" firstAttribute="top" secondItem="oNf-dB-Zr3" secondAttribute="bottom" constant="6" id="or5-nQ-rjx"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="Edj-gV-WYg" secondAttribute="trailing" constant="39" id="pi0-8S-azA"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="oNf-dB-Zr3" secondAttribute="trailing" constant="39" id="t78-jh-UO6"/>
-                            <constraint firstItem="i6B-fZ-G0q" firstAttribute="trailing" secondItem="jFJ-w7-LtY" secondAttribute="trailing" constant="111.5" id="wYv-r2-V5a"/>
-                        </constraints>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="63X-dL-FBG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Digital Card" image="creditcard.circle" catalog="system" id="53N-Of-xb8"/>
-                    <connections>
-                        <outlet property="nyitCardLabel" destination="6kT-vV-dES" id="6KA-rk-B5V"/>
-                        <outlet property="nyitSlideShow" destination="oNf-dB-Zr3" id="zI9-if-ZQW"/>
-                        <outlet property="titleLabel" destination="jFJ-w7-LtY" id="Y4P-M5-RCG"/>
-                        <outlet property="vaxCardLabel" destination="wOq-6E-75V" id="1sR-hO-K2F"/>
-                        <outlet property="vaxSlideShow" destination="Edj-gV-WYg" id="o52-rj-j6n"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5cI-e9-nVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -483,5 +414,8 @@
         <namedColor name="Background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
