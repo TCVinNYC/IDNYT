@@ -60,13 +60,13 @@
 		A3920BD8272E3C3300B51F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoController.swift; sourceTree = "<group>"; };
 		A3C061142739FC0D000317B1 /* PCLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCLView.swift; sourceTree = "<group>"; };
+		A3C32DEE275FFE420056D82E /* IDNYT.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = IDNYT.entitlements; path = ../../IDNYT.entitlements; sourceTree = "<group>"; };
 		A3C97299273DFECB0077DCB9 /* ClassViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewModel.swift; sourceTree = "<group>"; };
 		A3C9729B273E00060077DCB9 /* ClassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassModel.swift; sourceTree = "<group>"; };
 		A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardView.swift; sourceTree = "<group>"; };
 		A3D9800E27470B8A001CFA79 /* AttendenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendenceViewController.swift; sourceTree = "<group>"; };
 		A3D9801027470BA5001CFA79 /* AttendanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceModel.swift; sourceTree = "<group>"; };
 		A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
-		A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IDNYT.entitlements; sourceTree = "<group>"; };
 		A3E501CE275153DB00FCCB56 /* NFCReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		DCF1E9F4523A71ED433E5F27 /* Pods_IDNYT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDNYT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,7 +122,7 @@
 		A3920BC3272E3BEF00B51F9C /* IDNYT */ = {
 			isa = PBXGroup;
 			children = (
-				A3E501CD275152AA00FCCB56 /* IDNYT.entitlements */,
+				A3C32DEE275FFE420056D82E /* IDNYT.entitlements */,
 				A3920BC4272E3BEF00B51F9C /* AppDelegate.swift */,
 				A3920BC6272E3BEF00B51F9C /* SceneDelegate.swift */,
 				A3920BCF272E3BF000B51F9C /* LaunchScreen.storyboard */,
@@ -491,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idnyt.IDNYT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -527,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.idnyt.IDNYT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
