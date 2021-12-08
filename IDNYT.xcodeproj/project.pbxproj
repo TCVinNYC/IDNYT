@@ -147,7 +147,6 @@
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
 				A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */,
 				A345F384274C469300FCE3C2 /* HealthScreenView.swift */,
-				A308D32D275DB0EF00D5889B /* ScannerView.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 				A3D9801227470CC4001CFA79 /* AttendanceViewModel.swift */,
 				A3E501CE275153DB00FCCB56 /* NFCReader.swift */,
 				A3721DC1275428B200A4BCEC /* NFCController.swift */,
+				A308D32D275DB0EF00D5889B /* ScannerView.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
