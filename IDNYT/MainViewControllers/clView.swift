@@ -83,7 +83,10 @@ struct clView: View {
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text("\(data.course_name) - \(data.course_section)")
                                                     .bold()
-                                                    .font(.system(size: 23))
+                                                    .font(.title2)
+                                                    .minimumScaleFactor(0.0001)
+                                                    .lineLimit(2)
+                                                    .frame(alignment: .leading)
                                                     .foregroundColor(Color("TextColor"))
                                                 Text(data.course_location)
                                                     .font(.subheadline)
@@ -100,7 +103,7 @@ struct clView: View {
 
                                         }
                                         
-                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
+                                        .frame(maxWidth: UIScreen.main.bounds.size.width - 85)
                                         .padding()
                                         .background(Color.accentColor)
                                         .cornerRadius(20)
@@ -289,21 +292,24 @@ struct BottomSheet : View {
                                 VStack(alignment: .leading, spacing: 3){
                                     Text("\(data.course_name) - \(data.course_section)")
                                         .bold()
-                                        .font(.system(size: 23))
+                                        .font(.title2)
+                                        .minimumScaleFactor(0.0001)
+                                        .lineLimit(2)
+                                        .frame(alignment: .leading)
                                         .foregroundColor(Color("TextColor"))
                                     Text(data.course_location)
                                         .font(.subheadline)
                                         .foregroundColor(Color("TextColor"))
                                     Text("\(data.course_time_start) - \(data.course_time_end)")
                                         .font(.subheadline)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("TextColor"))
                                     Text("\(data.prof_name) - \(data.prof_email)")
                                         .font(.subheadline)
                                         .foregroundColor(Color("TextColor"))
                                 }
                                 Spacer()
                             }
-                            .frame(maxWidth: UIScreen.main.bounds.size.width - 95)
+                            .frame(maxWidth: UIScreen.main.bounds.size.width - 85)
                             .padding()
                             .background(Color.accentColor)
                             .opacity(0.7)

@@ -19,6 +19,7 @@ struct AttendenceViewController: View {
     @State private var maxAttend : Int = 0
     
     @State private var daysOfClass : [String] = []
+    @State private var selectedDay = ""
 
     var body: some View {
             VStack{
@@ -53,105 +54,86 @@ struct AttendenceViewController: View {
             .navigationTitle("Attendance List")
             
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+              //  ToolbarItemGroup(placement: .navigationBarTrailing) {
                     
                     
-                    Button(action: {
-                        //show list of all the attendance docs
-                        
-                        
-                    }){
-                            Image(systemName: "calendar.circle.fill")
-                                .foregroundColor(.blue)
-                            Text(date)
-                                .foregroundColor(.blue)
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Menu{
+                        Picker(selection: $selectedDay, label: Text("")) {
+                            ForEach(daysOfClass, id: \.self){ day in
+                                Text(day)
+                            }
+                        }
+
                     }
+                label: {
+                   // Label("\(selectedDay)", systemImage: "calendar.circle.fill").foregroundColor(.blue)
+                    HStack{
+                        Image(systemName: "calendar.circle.fill")
+                            .foregroundColor(.blue)
+//                        Text(selectedDay)
+//                            .foregroundColor(.blue)
+                    }
+                }
+                   
+            }
+                ToolbarItem(placement: .navigationBarTrailing){
                     
                     NavigationLink(destination: EditClassDetails(currentCourse: currentCourse)){
                                 Image(systemName: "pencil.circle.fill")
                                     .foregroundColor(.red)
-                            Text("Edit")
-                                .foregroundColor(.red)
+//                            Text("Edit")
+//                                .foregroundColor(.red)
                     }
-
-                }
+                    
+            }
                 
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Text("\(attendingCount)/\(maxAttend) Students")
                 }
                 
-
             }
             
             .onAppear {
-                //getAllDates()
-                
                 let dateObj = Date()
                 let formatter = DateFormatter()
+                formatter.dateFormat = "E"
+                
+                let currentDay : String = formatter.string(from: dateObj)
+                print(currentDay)
+                
                 formatter.dateStyle = .short
                 formatter.timeStyle = .none
-                
-                //compare current day with class days
                 date = formatter.string(from: dateObj).replacingOccurrences(of: "/", with: "-")
                 
-                formatter.dateFormat = "EEEE"
-                let currentDay : String = formatter.string(from: dateObj).prefix(3).lowercased()
+                //check the days the course is avalible and compare with the date then manually add that to the array and select it
+                //else just choose the latest document
+                model.getAllDates(courseDoc: currentCourse.id!) { String in
+                    if(String == "complete"){
+                        daysOfClass = model.dateList
+                        print("days of class ", daysOfClass)
+                        if(currentCourse.course_days.contains(currentDay) && !daysOfClass.contains(date)){
+                            daysOfClass.append(date)
+                        }
+                        
+                        daysOfClass = daysOfClass.sorted().reversed()
+                        selectedDay = daysOfClass[0]
+                    }
+                }
+            }
                 
-                model.getStudentDetails(courseDoc: currentCourse.id!, dateDoc: date, completion: { String in
-                        print(String)
+            .onChange(of: selectedDay) { result in
+                model.getStudentDetails(courseDoc: currentCourse.id!, dateDoc: selectedDay) { String in
+                    print(String)
+                    if(String == "empty docs"){
+                        attendingCount = 0
+                        model.attendance = []
+                    }else{
                         attendingCount = model.attendance.count
-                        maxAttend = currentCourse.student_list.count
-                })
-                
-//                if currentCourse.course_days.contains(currentDay){
-//                    model.getStudentDetails(courseDoc: currentCourse.id!, dateDoc: date, completion: { String in
-//                            print(String)
-//                            attendingCount = model.attendance.count
-//                            maxAttend = currentCourse.student_list.count
-//                    })
-//                }else{
-//
-//                }
+                    }
+                    maxAttend = currentCourse.student_list.count
+                }
             }
         }
-        
     }
-    
-    
-//    mutating func getAllDates(){
-//        Firestore.firestore().collection("courses").document(currentCourse.id!).collection("attendance").getDocuments { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    daysOfClass.append(document.documentID)
-//                }
-//
-//            }
-//        }
-//    }
-    
-    
-    
 }
-
-
-
-//struct AttendenceViewController_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AttendenceViewController()
-//    }
-//}
-
-
-
-//model.setAttendance { String in
-//    print(String)
-//}
-//
-//model.getStudentDetails { String in
-//    print(String)
-//}
-//model.attendance.forEach { String in
-//    print(String)
-//}

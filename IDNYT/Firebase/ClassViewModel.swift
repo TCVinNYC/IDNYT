@@ -100,7 +100,7 @@ class ClassViewModel : ObservableObject{
              "course_name":courseToUpdate.course_name,
              "course_section":courseToUpdate.course_section,
              "course_location":courseToUpdate.course_location,
-             "course_zoomLink":courseToUpdate.course_location,
+             "course_zoomLink":courseToUpdate.course_zoomLink,
              "course_start_time":courseToUpdate.course_time_start,
              "course_end_time":courseToUpdate.course_time_end,
              "course_days":courseToUpdate.course_days,

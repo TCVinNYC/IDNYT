@@ -191,6 +191,7 @@ struct EditClassDetails: View{
                     TextEditor(text: $textEditorText)
                         .foregroundColor(Color("NormalTextColor"))
                         .font(.system(size: 15))
+                        .textInputAutocapitalization(.never)
                 }
             }
         }
@@ -213,7 +214,7 @@ struct EditClassDetails: View{
                     if(course_name.isEmpty || course_section.isEmpty || course_location.isEmpty || course_zoomLink.isEmpty || days.isEmpty){
                         showAlert = true
                     }else{
-                        model.updateCourse(courseToUpdate: ClassModel(id: currentCourse.id, prof_name: currentCourse.prof_name, prof_email: currentCourse.prof_email, course_name: course_name, course_section: course_section, course_location: course_location, course_zoomLink: course_zoomLink, course_time_start: formatter.string(from: course_time_start), course_time_end: formatter.string(from: course_time_end), course_days: days, course_semester: course_semester, student_list: model.studentParser(textEditorText: textEditorText)))
+                        model.updateCourse(courseToUpdate: ClassModel(id: currentCourse.id, prof_name: currentCourse.prof_name, prof_email: currentCourse.prof_email, course_name: course_name, course_section: course_section, course_location: course_location, course_zoomLink: course_zoomLink, course_time_start: formatter.string(from: course_time_start), course_time_end: formatter.string(from: course_time_end), course_days: days, course_semester: "\(course_semester) \(currentYear())", student_list: model.studentParser(textEditorText: textEditorText)))
                         dismiss()
                     }
                 }){
@@ -257,6 +258,7 @@ struct EditClassDetails: View{
                     Text("Delete")
                 }.foregroundColor(.red)
             }
+            .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
             .onAppear(perform: {
                 var tempLocationSelection : Int = 0
                 print("\(didLoad)  onAppear")

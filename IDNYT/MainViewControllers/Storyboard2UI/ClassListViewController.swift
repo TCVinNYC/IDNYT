@@ -71,7 +71,7 @@ class ClassListViewController: UIViewController {
                 
             }else{
                 docRef.setData([
-                    "email" : Auth.auth().currentUser?.email!,
+                    "email" : Auth.auth().currentUser?.email! ?? "no email",
                     "type" : "student"
                 ])
                 DispatchQueue.main.async{

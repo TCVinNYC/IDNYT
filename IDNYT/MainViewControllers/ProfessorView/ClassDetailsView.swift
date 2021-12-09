@@ -20,7 +20,7 @@ struct ClassDetailsView: View{
     @State private var course_zoomLink : String = ""
     @State private var course_time_start = Date()
     @State private var course_time_end = Date()
-    @State private var course_semester : String = "Fall"
+    @State private var course_semester : String = ""
     var semesters = ["Fall", "Spring", "Summer", "Winter"]
 
     @State private var didTap1: Bool = false
@@ -178,6 +178,7 @@ struct ClassDetailsView: View{
                         TextEditor(text: $textEditorText)
                             .foregroundColor(Color("NormalTextColor"))
                             .font(.system(size: 15))
+                            .textInputAutocapitalization(.never)
                     }
                 }
             }
@@ -197,7 +198,7 @@ struct ClassDetailsView: View{
                         formatter.dateStyle = .none
                         formatter.timeStyle = .short
                         
-                        if(course_name.isEmpty || course_section.isEmpty || course_location.isEmpty || course_zoomLink.isEmpty || days.isEmpty){
+                        if(course_name.isEmpty || course_section.isEmpty || course_location.isEmpty || course_zoomLink.isEmpty || days.isEmpty || course_semester.isEmpty){
                             showAlert = true
                         }else{
                             model.addCourse(prof_name: model.userName!, prof_email: model.userEmail!, c_name: course_name, section: course_section, location: course_location, zoomLink: course_zoomLink, time_s: formatter.string(from: course_time_start), time_e: formatter.string(from: course_time_end), days: days, semester: "\(course_semester) \(currentYear())", student_list: model.studentParser(textEditorText: textEditorText))
@@ -234,6 +235,7 @@ struct ClassDetailsView: View{
                 }
                 Spacer()
             }
+            .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
             .navigationTitle("Enter Course Info")
         }
     

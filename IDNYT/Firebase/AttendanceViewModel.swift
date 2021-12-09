@@ -16,6 +16,8 @@ class AttendanceViewModel : ObservableObject {
     let userName = Auth.auth().currentUser?.displayName
     
     @Published var attendance = [AttendanceModel]()
+  //  @Published var
+    @Published var dateList : [String] = []
     
     private var db  = Firestore.firestore()
     
@@ -67,4 +69,62 @@ class AttendanceViewModel : ObservableObject {
             }
         }
     }
+    
+    
+    func getAllDates(courseDoc:String, completion: @escaping ((String)-> Void)){
+        dateList = []
+        db.collection("courses").document(courseDoc).collection("attendance").addSnapshotListener { snapshot, err in
+            if err != nil{
+                print("no docs")
+                print(err!)
+                return completion ("no docs")
+            }else{
+                for doc in snapshot!.documents{
+                    self.dateList.append(doc.documentID)
+                }
+                print(self.dateList)
+                return completion("complete")
+            }
+        }
+    }
+    
+    
+    
+    
+    
 }
+    
+    
+  //  func getAllDates(courseDoc:String, completion: @escaping ((String)-> Void)){
+//        db.collection("courses").document("courseDoc").collection("attendance").addSnapshotListener { snapshot, err in
+//            if err != nil {
+//                print("no docs")
+//                print(err!)
+//                return completion ("no docs")
+//            }else{
+//                for doc in snapshot!.documents{
+//                    self.dateList.append(doc.documentID)
+//                }
+//                print(self.dateList)
+//            }
+ //       }
+        
+        
+//        db.collection("courses").document(courseDoc).collection("attendance").getDocuments { snapshot, error in
+//            guard let err = error else {
+//                if ((snapshot?.isEmpty) != nil){
+//                    print("nothing here")
+//                    return completion ("empty")
+//                }
+//
+//                for doc in snapshot!.documents{
+//                    self.dateList.append(doc.documentID)
+//                }
+//                print("day list from function ", self.dateList)
+//                return completion ("completed")
+//            }
+//            print("no docs")
+//            print(err)
+//            return completion ("no docs")
+//        }
+    

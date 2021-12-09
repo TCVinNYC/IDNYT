@@ -36,13 +36,14 @@ struct HealthScreenView: View {
                         Section(header: Text("Fill out truthfully")){
                             HStack{
                                 Text("Select the campus you wish to attend")
-                                    .frame(width: 190, alignment: .leading)
+                                    .frame(alignment: .leading)
+                                    .minimumScaleFactor(0.0001)
                                 Spacer()
                                 Picker("", selection: $selectedLocation) {
                                     ForEach(locations, id: \.self){
                                         Text($0)
                                     }
-                                }
+                                }.minimumScaleFactor(0.0001)
                                 Spacer()
                             }.padding(.all, 10)
 //                                .onTapGesture {
@@ -50,11 +51,11 @@ struct HealthScreenView: View {
 //                        }
                         }
                         
-                        Section(header: Text("TAKE AND REPORT TEMPERATURE AT HOME"), footer: Text("In Fahrenheit F° (Ex: 98.6)")){
+                        Section(header: Text("TAKE AND REPORT TEMPERATURE AT HOME"), footer: Text("In Fahrenheit F° (Ex: 98.6)").minimumScaleFactor(0.0001)){
                             HStack{
                                 Text("Enter Temperature: ")
                                     .frame(width: 200, alignment: .leading)
-                                
+                                    .minimumScaleFactor(0.0001)
                                 Divider()
                                 TextField("Enter",text: $temp)
                                     .keyboardType(.decimalPad)
@@ -65,7 +66,7 @@ struct HealthScreenView: View {
                         
                         Section{
                             HStack{
-                                Text("HAVE YOU TESTED POSITIVE FOR COVID-19 IN THE PAST 10 DAYS?")
+                                Text("HAVE YOU TESTED POSITIVE FOR COVID-19 IN THE PAST 10 DAYS?").minimumScaleFactor(0.0001)
                                  //   .frame(width: 190, alignment: .leading)
                                 Spacer()
                                 Picker("", selection: $selectedAnswer) {
@@ -82,7 +83,9 @@ struct HealthScreenView: View {
 
                         Section{
                             HStack{
-                                Picker(selection: $selectedSecondAnswer, label: Text("HAVE YOU HAD ANY OF THESE COVID-19 SYMPTOMS SINCE YOUR LAST VISIT TO CAMPUS (UP TO 10 DAYS AGO)? \n a. Cough \n b. Shortness of breath or difficulty breathing \n Fever \n d. New loss of taste or smell \n e. Nausea, vomiting or diarrhea \n f. Congestion or runny nose")){
+                                Picker(selection: $selectedSecondAnswer, label: Text("HAVE YOU HAD ANY OF THESE COVID-19 SYMPTOMS SINCE YOUR LAST VISIT TO CAMPUS (UP TO 10 DAYS AGO)? \n a. Cough \n b. Shortness of breath or difficulty breathing \n c. Fever \n d. New loss of taste or smell \n e. Nausea, vomiting or diarrhea \n f. Congestion or runny nose")
+                                    .minimumScaleFactor(0.0001)
+                                       ){
                                     ForEach(secondAnswers, id: \.self){
                                         Text($0)
                                     }
@@ -113,7 +116,7 @@ struct HealthScreenView: View {
                     .alert("You're Missing Some Fields!", isPresented: $showingAlert) {
                         Button("OK", role: .cancel) { }
                     }}
-                .navigationBarTitle("Health Screen Questions")
+                .navigationTitle("Questions")
             }
                 
         }
@@ -186,6 +189,7 @@ struct ConfirmationHSView : View{
                 Form{
                     Section{
                         Text("Campus accessing: \(self.selectedLocation)").padding()
+                        
                     }
                     
                     Section{
@@ -197,7 +201,7 @@ struct ConfirmationHSView : View{
                     }
                     
                     Section{
-                        Text("Have you had any of these Covid-19 symptoms since your last visit to campus (UP TO 10 DAYS AGO): \(self.selectedSecondAnswer)").padding()
+                        Text("Have you had any of these COVID-19 symptoms since your last visit to campus (UP TO 10 DAYS AGO): \(self.selectedSecondAnswer)").padding()
                     }
                 }
                 
@@ -228,7 +232,7 @@ struct ConfirmationHSView : View{
                                     })
             )
         
-            .navigationTitle(Text("Confirm Your Answers"))
+            .navigationTitle(Text("Confirm Answers"))
     }
 }
 
@@ -269,14 +273,14 @@ struct CompletedHealthView: View {
                     .padding(.bottom, 10)
                     .padding(.horizontal)
                 Text(imageText[selection])
-                    .font(.title2)
-                    .fontWeight(.semibold).padding(.horizontal).padding(.bottom)
+                    .font(.title3)
+                    .fontWeight(.medium).padding(.horizontal).padding(.bottom)
                 Spacer()
             }
         }
 
 
-        .navigationTitle(Text("Health Screen Result"))
+        .navigationTitle(Text("Health Screen"))
     }
 }
 
