@@ -10,6 +10,8 @@ import FirebaseFirestore
 
 struct AttendenceViewController: View {
     
+    @Binding var isActive : Bool
+    
     var currentCourse: ClassModel
     @ObservedObject var model = AttendanceViewModel()
     let database = Firestore.firestore()
@@ -79,12 +81,12 @@ struct AttendenceViewController: View {
             }
                 ToolbarItem(placement: .navigationBarTrailing){
                     
-                    NavigationLink(destination: EditClassDetails(currentCourse: currentCourse)){
+                    NavigationLink(destination: EditClassDetails(currentCourse: currentCourse, isActive: self.$isActive)){
                                 Image(systemName: "pencil.circle.fill")
                                     .foregroundColor(.red)
 //                            Text("Edit")
 //                                .foregroundColor(.red)
-                    }
+                    }.isDetailLink(false)
                     
             }
                 
@@ -117,6 +119,9 @@ struct AttendenceViewController: View {
                         }
                         
                         daysOfClass = daysOfClass.sorted().reversed()
+                        if(daysOfClass.isEmpty){
+                            daysOfClass.append(date)
+                        }
                         selectedDay = daysOfClass[0]
                     }
                 }

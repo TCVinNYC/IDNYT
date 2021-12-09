@@ -17,7 +17,7 @@ struct PCLView: View {
     
     let database = Firestore.firestore()
     @State var showSheet = false
-    @State private var isShowingDetailView = false
+    @State private var isActive : Bool = false
     @State private var isLoading = true
     
     var body: some View {
@@ -32,7 +32,7 @@ struct PCLView: View {
                         ZStack{
                             List{
                                 ForEach(model.classes, id: \.self) {data in
-                                    NavigationLink(destination: AttendenceViewController(currentCourse: data)){
+                                    NavigationLink(destination: AttendenceViewController(isActive: self.$isActive, currentCourse: data), isActive: $isActive){
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text("\(data.course_name) - \(data.course_section)")
                                                     .bold()
@@ -51,7 +51,8 @@ struct PCLView: View {
                                                     .lineLimit(1)
                                                     .font(.subheadline)
                                             }
-                                    }
+                                            
+                                    }.isDetailLink(false)
                                 }
                             }
                             
@@ -88,6 +89,7 @@ struct PCLView: View {
                 }
                 .foregroundColor(.blue)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
         .onAppear(perform: downloadCoursesCall)
     }

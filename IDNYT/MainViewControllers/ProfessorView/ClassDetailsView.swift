@@ -235,7 +235,7 @@ struct ClassDetailsView: View{
                 }
                 Spacer()
             }
-            .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
+         //   .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
             .navigationTitle("Enter Course Info")
         }
     

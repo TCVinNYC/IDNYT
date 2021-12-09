@@ -35,6 +35,7 @@ struct EditClassDetails: View{
     @State private var textEditorText:String = ""
     
     @Environment(\.dismiss) var dismiss
+    @Binding var isActive : Bool
     @State private var showAlert = false
     @State private var didLoad = false
     @State private var didLoad2 = false
@@ -215,8 +216,8 @@ struct EditClassDetails: View{
                         showAlert = true
                     }else{
                         model.updateCourse(courseToUpdate: ClassModel(id: currentCourse.id, prof_name: currentCourse.prof_name, prof_email: currentCourse.prof_email, course_name: course_name, course_section: course_section, course_location: course_location, course_zoomLink: course_zoomLink, course_time_start: formatter.string(from: course_time_start), course_time_end: formatter.string(from: course_time_end), course_days: days, course_semester: "\(course_semester) \(currentYear())", student_list: model.studentParser(textEditorText: textEditorText)))
-                        dismiss()
                     }
+                    dismiss()
                 }){
                     HStack{
                         Spacer()
@@ -252,13 +253,14 @@ struct EditClassDetails: View{
             .navigationTitle("Edit Course Info")
             .toolbar{
                 Button(action: {
+                    //dismiss()
+                    self.isActive = false
                     model.deleteCourse(docID: currentCourse.id!)
-                    dismiss()
                 }) {
                     Text("Delete")
                 }.foregroundColor(.red)
             }
-            .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
+         //   .gesture(DragGesture().onChanged{_ in UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)})
             .onAppear(perform: {
                 var tempLocationSelection : Int = 0
                 print("\(didLoad)  onAppear")
