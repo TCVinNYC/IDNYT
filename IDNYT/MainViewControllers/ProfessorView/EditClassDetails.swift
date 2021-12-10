@@ -35,7 +35,7 @@ struct EditClassDetails: View{
     @State private var textEditorText:String = ""
     
     @Environment(\.dismiss) var dismiss
-    @Binding var isActive : Bool
+ //   @Binding var isActive : Bool
     @State private var showAlert = false
     @State private var didLoad = false
     @State private var didLoad2 = false
@@ -253,8 +253,8 @@ struct EditClassDetails: View{
             .navigationTitle("Edit Course Info")
             .toolbar{
                 Button(action: {
-                    //dismiss()
-                    self.isActive = false
+                    dismiss()
+                //    self.isActive = false
                     model.deleteCourse(docID: currentCourse.id!)
                 }) {
                     Text("Delete")

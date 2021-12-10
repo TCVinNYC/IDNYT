@@ -231,155 +231,11 @@
                     <view key="view" contentMode="scaleToFill" id="Mv2-MK-1vD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RW3-2H-Olk">
-                                <rect key="frame" x="29" y="112" width="253" height="50"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="38"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" name="AccentColor"/>
-                                <size key="shadowOffset" width="-1" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="JSr-hY-EvE">
-                                <rect key="frame" x="29" y="260" width="150" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Student Name:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-BT-LVb">
-                                <rect key="frame" x="29" y="312" width="117" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="NYIT Email:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OyQ-H0-4VE">
-                                <rect key="frame" x="29" y="362" width="119" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="ID Number:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temporary Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="a7o-9I-5aN">
-                                <rect key="frame" x="213" y="262" width="153" height="25"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FAn-hZ-Dd0">
-                                <rect key="frame" x="213" y="409" width="181" height="32"/>
-                                <segments>
-                                    <segment title="Auto"/>
-                                    <segment title="Light"/>
-                                    <segment title="Dark"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChangedWith_sender:" destination="fXZ-e6-HS5" eventType="valueChanged" id="MvT-Om-dZE"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ruq-sr-twJ">
-                                <rect key="frame" x="29" y="410" width="168" height="29"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="App Apearance:">
-                                        <attributes>
-                                            <font key="NSFont" size="22" name="Futura-Medium"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Zz-1N-yyu">
-                                <rect key="frame" x="213" y="359" width="166" height="34.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="postal-code"/>
-                                <connections>
-                                    <action selector="idNumber:" destination="fXZ-e6-HS5" eventType="editingDidEnd" id="Oca-X6-vBs"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbW-4Y-vVH">
-                                <rect key="frame" x="133" y="670" width="148" height="39"/>
-                                <color key="tintColor" red="0.99758130310000004" green="0.0" blue="0.29802599549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Sign Out">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Futura-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.99758130310000004" green="0.0" blue="0.29802599549999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="signOut:" destination="fXZ-e6-HS5" eventType="touchUpInside" id="iwD-T5-nM3"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="signOut" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rUO-tS-9Xq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="someuser@nyit.edu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="qib-gw-AJY">
-                                <rect key="frame" x="213" y="314" width="166" height="25"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Zd-Vp-x3b"/>
                         <color key="backgroundColor" name="Background"/>
-                        <constraints>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="qib-gw-AJY" secondAttribute="trailing" constant="35" id="4LQ-rW-pwH"/>
-                            <constraint firstItem="OyQ-H0-4VE" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="64L-NR-hI3"/>
-                            <constraint firstItem="a7o-9I-5aN" firstAttribute="top" secondItem="RW3-2H-Olk" secondAttribute="bottom" constant="100" id="6TP-za-OQg"/>
-                            <constraint firstItem="JSr-hY-EvE" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="8sS-dZ-fb9"/>
-                            <constraint firstItem="F9a-BT-LVb" firstAttribute="top" secondItem="JSr-hY-EvE" secondAttribute="bottom" constant="23" id="9qk-wV-KB1"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="FAn-hZ-Dd0" secondAttribute="trailing" constant="20" id="B1B-5n-6l7"/>
-                            <constraint firstItem="3Zz-1N-yyu" firstAttribute="leading" secondItem="OyQ-H0-4VE" secondAttribute="trailing" constant="65" id="D91-7J-IJe"/>
-                            <constraint firstItem="Ruq-sr-twJ" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="Dj8-Gx-5V2"/>
-                            <constraint firstItem="a7o-9I-5aN" firstAttribute="leading" secondItem="JSr-hY-EvE" secondAttribute="trailing" constant="34" id="JQj-fY-ahd"/>
-                            <constraint firstItem="OyQ-H0-4VE" firstAttribute="top" secondItem="F9a-BT-LVb" secondAttribute="bottom" constant="21" id="MaD-ku-LJL"/>
-                            <constraint firstItem="qib-gw-AJY" firstAttribute="top" secondItem="a7o-9I-5aN" secondAttribute="bottom" constant="27" id="O9c-Kz-Ohu"/>
-                            <constraint firstItem="FAn-hZ-Dd0" firstAttribute="top" secondItem="3Zz-1N-yyu" secondAttribute="bottom" constant="15.5" id="OP5-Fb-lmy"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="a7o-9I-5aN" secondAttribute="trailing" constant="48" id="Qs0-H1-yGS"/>
-                            <constraint firstItem="RW3-2H-Olk" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="SSm-nb-EWs"/>
-                            <constraint firstItem="JSr-hY-EvE" firstAttribute="top" secondItem="RW3-2H-Olk" secondAttribute="bottom" constant="98" id="X4g-Dt-pP7"/>
-                            <constraint firstItem="qib-gw-AJY" firstAttribute="leading" secondItem="F9a-BT-LVb" secondAttribute="trailing" constant="67" id="heF-5q-efO"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="bottom" secondItem="EbW-4Y-vVH" secondAttribute="bottom" constant="104" id="j5k-rz-KeD"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="RW3-2H-Olk" secondAttribute="trailing" constant="132" id="jJG-x4-uYx"/>
-                            <constraint firstItem="F9a-BT-LVb" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="29" id="jar-xK-qrs"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="EbW-4Y-vVH" secondAttribute="trailing" constant="133" id="kBZ-42-9i6"/>
-                            <constraint firstItem="RW3-2H-Olk" firstAttribute="top" secondItem="5Zd-Vp-x3b" secondAttribute="top" constant="68" id="kfv-pg-Jze"/>
-                            <constraint firstItem="Ruq-sr-twJ" firstAttribute="top" secondItem="OyQ-H0-4VE" secondAttribute="bottom" constant="19" id="mge-Mb-vKz"/>
-                            <constraint firstItem="3Zz-1N-yyu" firstAttribute="top" secondItem="qib-gw-AJY" secondAttribute="bottom" constant="20" id="qK9-De-ASZ"/>
-                            <constraint firstItem="FAn-hZ-Dd0" firstAttribute="leading" secondItem="Ruq-sr-twJ" secondAttribute="trailing" constant="16" id="sg4-Ae-eu8"/>
-                            <constraint firstItem="5Zd-Vp-x3b" firstAttribute="trailing" secondItem="3Zz-1N-yyu" secondAttribute="trailing" constant="35" id="wKV-RP-7tM"/>
-                            <constraint firstItem="EbW-4Y-vVH" firstAttribute="leading" secondItem="5Zd-Vp-x3b" secondAttribute="leading" constant="133" id="ynu-DJ-YAl"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Account Info" image="person.circle" catalog="system" id="Xmw-Gq-uj3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="appAppearance" destination="FAn-hZ-Dd0" id="PCh-KE-fKB"/>
-                        <outlet property="signOutBtn" destination="EbW-4Y-vVH" id="Tkj-IG-RiX"/>
-                        <outlet property="userEmail" destination="qib-gw-AJY" id="oLb-Hy-JNZ"/>
-                        <outlet property="userID" destination="3Zz-1N-yyu" id="Met-wc-t5x"/>
-                        <outlet property="userName" destination="a7o-9I-5aN" id="q5Z-2y-AML"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Piu-GB-CO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -396,7 +252,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jDy-W3-SjB"/>
-        <segue reference="rUO-tS-9Xq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="GoogleSignIn" width="382" height="92"/>

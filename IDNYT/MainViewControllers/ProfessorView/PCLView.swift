@@ -17,7 +17,7 @@ struct PCLView: View {
     
     let database = Firestore.firestore()
     @State var showSheet = false
-    @State private var isActive : Bool = false
+   // @Binding private var isActive : Bool = projectedValue
     @State private var isLoading = true
     
     var body: some View {
@@ -32,7 +32,7 @@ struct PCLView: View {
                         ZStack{
                             List{
                                 ForEach(model.classes, id: \.self) {data in
-                                    NavigationLink(destination: AttendenceViewController(isActive: self.$isActive, currentCourse: data), isActive: $isActive){
+                                    NavigationLink(destination: AttendenceViewController(currentCourse: data)){
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text("\(data.course_name) - \(data.course_section)")
                                                     .bold()

@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 struct AttendenceViewController: View {
     
-    @Binding var isActive : Bool
+   // @Binding var isActive : Bool
     
     var currentCourse: ClassModel
     @ObservedObject var model = AttendanceViewModel()
@@ -81,7 +81,7 @@ struct AttendenceViewController: View {
             }
                 ToolbarItem(placement: .navigationBarTrailing){
                     
-                    NavigationLink(destination: EditClassDetails(currentCourse: currentCourse, isActive: self.$isActive)){
+                    NavigationLink(destination: EditClassDetails(currentCourse: currentCourse)){
                                 Image(systemName: "pencil.circle.fill")
                                     .foregroundColor(.red)
 //                            Text("Edit")

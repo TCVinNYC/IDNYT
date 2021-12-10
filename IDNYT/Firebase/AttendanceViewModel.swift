@@ -14,12 +14,17 @@ class AttendanceViewModel : ObservableObject {
     
     let userEmail = Auth.auth().currentUser?.email
     let userName = Auth.auth().currentUser?.displayName
+    let userProfilePic = Auth.auth().currentUser?.photoURL
     
     @Published var attendance = [AttendanceModel]()
   //  @Published var
     @Published var dateList : [String] = []
     
     private var db  = Firestore.firestore()
+    
+    func signOut(){
+        try! Auth.auth().signOut()
+    }
     
     func getStudentDetails(courseDoc:String, dateDoc:String, completion: @escaping ((String) -> Void)){
         db.collection("courses").document(courseDoc).collection("attendance").document(dateDoc).addSnapshotListener {(querySnapshot, err) in

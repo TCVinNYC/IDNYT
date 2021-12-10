@@ -12,5 +12,6 @@ pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift', '= 8.9.0-beta'
 pod 'GoogleSignIn'
 pod 'WeScan', '>= 0.9'
+pod 'SDWebImageSwiftUI'
 
 end

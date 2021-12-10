@@ -12,6 +12,7 @@
 		A30E0F2D273797E500B5CA0D /* ClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */; };
 		A30E0F2F27379BE400B5CA0D /* clView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30E0F2E27379BE400B5CA0D /* clView.swift */; };
 		A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A314408B274778C700FB7F7C /* EditClassDetails.swift */; };
+		A3154AB82762E937001BEB59 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3154AB72762E937001BEB59 /* AccountView.swift */; };
 		A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3258FAD275D5D2900688533 /* ClassDetailsView.swift */; };
 		A3258FB2275D9B2800688533 /* DigitalCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */; };
 		A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A345F384274C469300FCE3C2 /* HealthScreenView.swift */; };
@@ -43,6 +44,7 @@
 		A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListViewController.swift; sourceTree = "<group>"; };
 		A30E0F2E27379BE400B5CA0D /* clView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clView.swift; sourceTree = "<group>"; };
 		A314408B274778C700FB7F7C /* EditClassDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClassDetails.swift; sourceTree = "<group>"; };
+		A3154AB72762E937001BEB59 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		A3258FAD275D5D2900688533 /* ClassDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailsView.swift; sourceTree = "<group>"; };
 		A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalCardViewController.swift; sourceTree = "<group>"; };
 		A345F384274C469300FCE3C2 /* HealthScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthScreenView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		A345F386274C49E000FCE3C2 /* Storyboard2UI */ = {
 			isa = PBXGroup;
 			children = (
+				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
 				A30E0F2C273797E500B5CA0D /* ClassListViewController.swift */,
 				A345F387274C4A0F00FCE3C2 /* HSViewController.swift */,
 				A3258FB1275D9B2800688533 /* DigitalCardViewController.swift */,
@@ -143,10 +146,10 @@
 			children = (
 				A345F386274C49E000FCE3C2 /* Storyboard2UI */,
 				A3D9800D27470B74001CFA79 /* ProfessorView */,
-				A3B71DDD2730A839008FB7F9 /* AccountInfoController.swift */,
 				A30E0F2E27379BE400B5CA0D /* clView.swift */,
 				A3D9800B2745BD8D001CFA79 /* DigitalCardView.swift */,
 				A345F384274C469300FCE3C2 /* HealthScreenView.swift */,
+				A3154AB72762E937001BEB59 /* AccountView.swift */,
 			);
 			path = MainViewControllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				A3C061152739FC0D000317B1 /* PCLView.swift in Sources */,
 				A345F385274C469300FCE3C2 /* HealthScreenView.swift in Sources */,
 				A3D9800C2745BD8D001CFA79 /* DigitalCardView.swift in Sources */,
+				A3154AB82762E937001BEB59 /* AccountView.swift in Sources */,
 				A314408C274778C700FB7F7C /* EditClassDetails.swift in Sources */,
 				A379226A272E4504000C17B4 /* LaunchAnimationController.swift in Sources */,
 				A3258FAE275D5D2900688533 /* ClassDetailsView.swift in Sources */,
